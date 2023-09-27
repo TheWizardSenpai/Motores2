@@ -15,7 +15,7 @@ public class HealthModSkill : Skill
     [Range(0f, 1f)]
     public float critChance = 0;
 
-    protected override void OnRun(Fighter receiver)
+    /*protected override void OnRun(Fighter receiver)
     {
         float amount = this.GetModification(receiver);
 
@@ -41,7 +41,7 @@ public class HealthModSkill : Skill
 
 
         receiver.ModifyHealth(((int)amount));
-    }
+    }*/
 
     public float GetModification(Fighter receiver)
     {
@@ -64,5 +64,10 @@ public class HealthModSkill : Skill
         }
 
         throw new System.InvalidOperationException("HealthModSkill::GetDamage. Unreachable!");
+    }
+
+    protected override void OnRun()
+    {
+        throw new System.NotImplementedException();
     }
 }
