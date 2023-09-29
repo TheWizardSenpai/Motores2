@@ -8,11 +8,25 @@ using TMPro;
 public class MenuScene : MonoBehaviour
 {
     private CanvasGroup fadeGroup;
-    private float fadeInSpeed = 0.33f;
+    private float fadeInSpeed = 0.5f;
     public RectTransform menuContainer;
     public Transform levelPanel;
     public Transform colorPanel;
     public Transform settingPanel;
+    public GameObject currency;
+    public GameObject stamina;
+    public GameObject confirmationPanel;
+    public GameObject tutorialPanel;
+    public GameObject closeTutorialButton;
+    public Button[] levelsButtons;
+    int currentIndex = 0;
+    public TextMeshProUGUI textInstrucions;
+    public List<String> instructionList =new List<String>();
+
+
+    public bool isFadeOut;
+
+
 
     public TextMeshProUGUI colorBuySetText;  
 
@@ -23,20 +37,27 @@ public class MenuScene : MonoBehaviour
 
 
     private Vector3 desiredMenuPosition;
-    private void Start()
+    IEnumerator Start()
     {
+        confirmationPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
+
         fadeGroup = FindObjectOfType<CanvasGroup>();
         fadeGroup.alpha = 1;
+        yield return new WaitForSeconds(2.5f);              
+        isFadeOut = true;
         //add buttons to shop
         InitShop();
         //add buttons to levels
         InitLevel();
+        
 
     }
 
     private void Update()
     {
-        fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+        if(isFadeOut)
+        fadeGroup.alpha -= Time.deltaTime * fadeInSpeed;
         // Menu navigation
         menuContainer.anchoredPosition3D = Vector3.Lerp(menuContainer.anchoredPosition3D, desiredMenuPosition, 0.1f);
     }
@@ -84,6 +105,8 @@ public class MenuScene : MonoBehaviour
     {
         switch (menuIndex)
         {
+
+
             //0 && default case = Main Menu
             default:
             case 0:
@@ -102,6 +125,18 @@ public class MenuScene : MonoBehaviour
                 break;
 
 
+        }
+
+        if(menuIndex==0||menuIndex==1)
+        {
+            currency.SetActive(true);
+            stamina.SetActive(true);
+
+        }
+        else
+        {
+            currency.SetActive(false);
+            stamina.SetActive(false);
         }
     }
 
@@ -192,5 +227,46 @@ public class MenuScene : MonoBehaviour
         }
     }
 
-    
+    public void EraseDataButton()
+    {
+        confirmationPanel.SetActive(true);
+    }
+
+    public void DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
+        confirmationPanel.SetActive(false);
+    }
+
+    public void CancelDeleteData()
+    {
+        confirmationPanel.SetActive(false);
+
+    }
+
+    public void Tutorial()
+    {
+        tutorialPanel.SetActive(true);
+        StartCoroutine(ChangeInstructions());
+    }
+    public void CloseTutorial()
+    {
+        tutorialPanel.SetActive(false);
+
+    }
+
+    IEnumerator ChangeInstructions()
+    {
+        while(true)
+        {
+            textInstrucions.text = instructionList[currentIndex];
+            yield return new WaitForSeconds(4);
+            currentIndex = (currentIndex + 1) % instructionList.Count;
+        }
+        
+
+
+    }
+
+
 }
