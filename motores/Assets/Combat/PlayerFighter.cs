@@ -21,22 +21,19 @@ public class PlayerFighter : Fighter
             this.skillPanel.ConfigureButtons(i, this.skills[i].skillName);
         }
     }
-
-    /// ================================================
-    /// <summary>
-    /// Se llama desde los botones del panel de habilidades.
-    /// </summary>
-    /// <param name="index"></param>
     public void ExecuteSkill(int index)
     {
         this.skillPanel.Hide();
 
         Skill skill = this.skills[index];
 
-        skill.SetEmitterAndReceiver(
-            this, this.combatManager.GetOpposingEnemy()
-        );
+        //EXECUTE
+
+       skill.SetEmitterAndReceiver(
+            this, this.combatManager.GetOpposingCharacter()
+            );
 
         this.combatManager.OnFighterSkill(skill);
     }
+
 }

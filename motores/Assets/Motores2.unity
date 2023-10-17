@@ -247,8 +247,6 @@ MonoBehaviour:
   idName: Warrior
   statusPanel: {fileID: 1027837581}
   combatManager: {fileID: 1839064883}
-  CameraPivot: {fileID: 0}
-  DamagePivot: {fileID: 78846157}
   skillPanel: {fileID: 1679369553}
 --- !u!212 &78846156
 SpriteRenderer:
@@ -316,6 +314,9 @@ Transform:
   m_Children:
   - {fileID: 1392152778}
   - {fileID: 255421304}
+  - {fileID: 1844535262}
+  - {fileID: 1537452848}
+  - {fileID: 1865148485}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -413,7 +414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 152833963}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 78846155}
+        m_TargetAssemblyTypeName: PlayerFighter, Assembly-CSharp
+        m_MethodName: ExecuteSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &152833963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +548,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 220337482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 78846155}
+        m_TargetAssemblyTypeName: PlayerFighter, Assembly-CSharp
+        m_MethodName: ExecuteSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &220337482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,8 +608,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 255421304}
+  - component: {fileID: 255421305}
   m_Layer: 0
-  m_Name: Golpe Fuerte
+  m_Name: Gatillo Facil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,6 +631,24 @@ Transform:
   m_Father: {fileID: 78846157}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255421305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255421303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Gatillo Facil
+  animationDuration: 2
+  selfInflicted: 0
+  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  amount: -15
+  modType: 0
 --- !u!1 &385740424
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602767393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 78846155}
+        m_TargetAssemblyTypeName: PlayerFighter, Assembly-CSharp
+        m_MethodName: ExecuteSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &602767393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +1020,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602767390}
   m_CullTransparentMesh: 1
+--- !u!1 &653022226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653022227}
+  - component: {fileID: 653022228}
+  m_Layer: 0
+  m_Name: Cabezazo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653022227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653022226}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.35, y: -0.075, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 954311746}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653022228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653022226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Cabezazo
+  animationDuration: 2
+  selfInflicted: 0
+  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  amount: -50
+  modType: 0
 --- !u!114 &746176973 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8357149654866552080, guid: d930569265d00a146a6a968ab282a5b8, type: 3}
@@ -1010,8 +1116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: 19}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 0.000013351}
+  m_SizeDelta: {x: 1102, y: 99.993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849325022
 MonoBehaviour:
@@ -1088,8 +1194,6 @@ MonoBehaviour:
   idName: Skeleton
   statusPanel: {fileID: 1773362141}
   combatManager: {fileID: 1839064883}
-  CameraPivot: {fileID: 385740425}
-  DamagePivot: {fileID: 385740425}
 --- !u!212 &954311745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1155,6 +1259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 385740425}
+  - {fileID: 653022227}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1573,6 +1678,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1537452847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537452848}
+  - component: {fileID: 1537452849}
+  m_Layer: 0
+  m_Name: Cachetada
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537452848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537452847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 78846157}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537452849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537452847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Cachetada
+  animationDuration: 2
+  selfInflicted: 0
+  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  amount: -30
+  modType: 0
 --- !u!114 &1538355548 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8357149654866552080, guid: d930569265d00a146a6a968ab282a5b8, type: 3}
@@ -1864,7 +2019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1732543031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 78846155}
+        m_TargetAssemblyTypeName: PlayerFighter, Assembly-CSharp
+        m_MethodName: ExecuteSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732543031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,13 +2127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighters:
-  - {fileID: 0}
-  - {fileID: 0}
-  fighterIndex: 0
-  playerFighters:
   - {fileID: 78846155}
-  enemyFighters:
   - {fileID: 954311744}
+  fighterIndex: -1
 --- !u!4 &1839064884
 Transform:
   m_ObjectHideFlags: 0
@@ -1982,6 +2145,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1844535261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844535262}
+  - component: {fileID: 1844535263}
+  m_Layer: 0
+  m_Name: Furia Dragon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844535262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844535261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 78846157}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844535263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844535261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Furia Dragon
+  animationDuration: 2
+  selfInflicted: 0
+  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  amount: -50
+  modType: 0
 --- !u!1001 &1856444178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2083,6 +2296,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d930569265d00a146a6a968ab282a5b8, type: 3}
+--- !u!1 &1865148484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865148485}
+  - component: {fileID: 1865148486}
+  m_Layer: 0
+  m_Name: Curacion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865148485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865148484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 78846157}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865148486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865148484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Curacion
+  animationDuration: 2
+  selfInflicted: 1
+  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  amount: 20
+  modType: 0
 --- !u!114 &2011107726 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4400656012954867257, guid: d930569265d00a146a6a968ab282a5b8, type: 3}

@@ -11,11 +11,6 @@ public abstract class Fighter : MonoBehaviour
 
     protected Skill[] skills;
 
-    [SerializeField]
-    public Transform CameraPivot;
-
-    [SerializeField]
-    public Transform DamagePivot;
 
     public bool isAlive
     {
@@ -31,7 +26,6 @@ public abstract class Fighter : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         this.stats.health = Mathf.Clamp(this.stats.health + amount, 0f, this.stats.maxHealth);
-
         this.stats.health = Mathf.Round(this.stats.health);
         this.statusPanel.SetHealth(this.stats.health, this.stats.maxHealth);
     }
