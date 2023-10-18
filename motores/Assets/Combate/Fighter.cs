@@ -28,7 +28,7 @@ public abstract class Fighter : MonoBehaviour
         this.statusPanel.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }
-
+    
 
     public void ModifyHealth(float amount)
     {
@@ -40,6 +40,7 @@ public abstract class Fighter : MonoBehaviour
         {
             Invoke("Die", 2f);
         }
+        
     }
 
     public Stats GetCurrentStats()
