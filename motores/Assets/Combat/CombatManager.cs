@@ -6,6 +6,7 @@ public enum CombatStatus
 {
     WAITING_FOR_FIGHTER,
     FIGHTER_ACTION,
+    CHECK_ACTION_MESSAGES,
     CHECK_FOR_VICTORY,
     NEXT_TURN,
     SKIP_TURN
@@ -62,6 +63,21 @@ public class CombatManager : MonoBehaviour
                     this.combatStatus = CombatStatus.CHECK_FOR_VICTORY;
 
                     currentFighterSkill = null;
+                    break;
+                case CombatStatus.CHECK_ACTION_MESSAGES:
+                    string nextMessage = this.currentFighterSkill.GetNextMessage();
+                    if (nextMessage != null)
+                    {
+                        LogPanel.Write(nextMessage);
+                        yield return new WaitForSeconds(2f);
+                    }
+                    else
+                    {
+                        this.currentFighterSkill = null;
+                        this.combatStatus = CombatStatus.CHECK_FOR_VICTORY;
+                        yield return new WaitForSeconds(2f);
+                    }
+
                     break;
 
                 case CombatStatus.CHECK_FOR_VICTORY:
