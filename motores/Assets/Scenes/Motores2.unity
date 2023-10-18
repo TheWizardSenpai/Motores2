@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 255421304}
   - component: {fileID: 255421305}
   m_Layer: 0
-  m_Name: Gatillo Facil
+  m_Name: Rompe huesos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,13 +721,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Gatillo Facil
+  skillName: Rompe huesos
   animationDuration: 2
   selfInflicted: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -15
+  amount: -40
   modType: 0
-  critChance: 0
+  critChance: 0.3
 --- !u!1 &431162226
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +829,56 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &437481205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437481206}
+  - component: {fileID: 437481207}
+  m_Layer: 0
+  m_Name: Robo de vida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &437481206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437481205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 954311746}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &437481207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437481205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b28600c4a92de746ace2457331eb3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Robo de vida
+  animationDuration: 1
+  selfInflicted: 0
+  effectPrfb: {fileID: 0}
+  lifeStealPercentage: 0.4
+  amount: 40
 --- !u!1 &458887595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,9 +1268,9 @@ MonoBehaviour:
   animationDuration: 2
   selfInflicted: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -2000
+  amount: -60
   modType: 0
-  critChance: 0
+  critChance: 0.2
 --- !u!114 &746176973 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8357149654866552080, guid: d930569265d00a146a6a968ab282a5b8, type: 3}
@@ -1412,6 +1462,7 @@ Transform:
   m_Children:
   - {fileID: 653022227}
   - {fileID: 431162227}
+  - {fileID: 437481206}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1490,7 +1541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 309, y: 308}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1117905134
@@ -2095,7 +2146,7 @@ GameObject:
   - component: {fileID: 1537452850}
   - component: {fileID: 1537452849}
   m_Layer: 0
-  m_Name: Cachetada
+  m_Name: Intimidacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2616,7 +2667,7 @@ MonoBehaviour:
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: -50
   modType: 0
-  critChance: 1
+  critChance: 0
 --- !u!1001 &1856444178
 PrefabInstance:
   m_ObjectHideFlags: 0

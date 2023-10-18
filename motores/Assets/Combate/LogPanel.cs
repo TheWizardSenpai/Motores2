@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-
+//TP2 FACUNDO FERREIRO
 public class LogPanel : MonoBehaviour
 {
     //Referencia estatica al panel actual
@@ -16,5 +17,10 @@ public class LogPanel : MonoBehaviour
     public static void Write(string message)
     {
         current.logLabel.text = message;
+    }
+
+    internal static void Write(string idName, string v)
+    {
+        throw new NotImplementedException();
     }
 }
