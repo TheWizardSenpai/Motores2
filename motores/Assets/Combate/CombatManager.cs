@@ -15,6 +15,9 @@ public enum CombatStatus
 
 public class CombatManager : MonoBehaviour
 {
+    private GameManager gameManagerInstance; // Variable para almacenar la instancia del GameManager
+
+
     public Fighter[] fighters;
     [SerializeField]
     private int fighterIndex;
@@ -32,6 +35,13 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
+        gameManagerInstance = GameObject.FindObjectOfType<GameManager>(); // Encuentra la instancia existente del GameManager en la escena
+
+        if (gameManagerInstance == null)
+        {
+            Debug.LogError("No se encontró el objeto GameManager en la escena.");
+            return;
+        }
         LogPanel.Write("Battle initiated.");
 
         this.combatStatus = CombatStatus.NEXT_TURN;
@@ -39,6 +49,7 @@ public class CombatManager : MonoBehaviour
         this.fighterIndex = -1;
 
         this.isCombatActive = true;
+
 
         StartCoroutine(this.CombatLoop());
     }
@@ -89,7 +100,7 @@ public class CombatManager : MonoBehaviour
                     {
                         if (fgtr.isAlive == false)
                         {
-                            /*GameManager.Instance.sumarcoinst(5);*/
+                            GameManager.Instance.sumarcoinst(5);
                             LogPanel.Write("Victory!");
                             this.isCombatActive = false;
                             SceneManager.LoadScene(2);
