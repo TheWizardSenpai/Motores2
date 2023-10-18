@@ -16,7 +16,7 @@ public class StatusModSkill : Skill
         }
 
 
-        this.messages.Enqueue(this.message.Replace("{receiver}", receiver.idName));
+        LogPanel.Write(this.message.Replace("{receiver}", receiver.idName));
 
         receiver.statusMods.Add(this.mod);
         

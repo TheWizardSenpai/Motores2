@@ -13,10 +13,10 @@ public class LifeStealSkill : Skill
         float healedAmount = damage * lifeStealPercentage;
         float remainingDamage = damage - healedAmount;
 
-   
 
-        messages.Enqueue("Hit for " + (int)remainingDamage + " to " + receiver.idName);
-        messages.Enqueue("Stole " + (int)healedAmount + " life from " + receiver.idName);
+
+        LogPanel.Write("Hit for " + (int)remainingDamage + " to " + receiver.idName);
+        LogPanel.Write("Stole " + (int)healedAmount + " life from " + receiver.idName);
 
         receiver.ModifyHealth(-(int)remainingDamage); // REDUCE LA VIDA DEL RECEIVER
         emitter.ModifyHealth((int)healedAmount); // AUMENTA LA VIDA DEL EMISOR
