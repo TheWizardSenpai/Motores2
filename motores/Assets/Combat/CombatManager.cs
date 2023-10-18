@@ -88,7 +88,7 @@ public class CombatManager : MonoBehaviour
                         {
                            
                             this.isCombatActive = false;
-
+                            GameManager.Instance.sumarcoinst(5);
                             LogPanel.Write("Victory!");
                         }
                     
