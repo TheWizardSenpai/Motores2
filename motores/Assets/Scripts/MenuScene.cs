@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MenuScene : MonoBehaviour
 {
@@ -13,35 +14,48 @@ public class MenuScene : MonoBehaviour
     public Transform levelPanel;
     public Transform colorPanel;
     public Transform settingPanel;
-    public GameObject currency;
-    public GameObject stamina;
+    public GameObject currencyPanel;
+    public GameObject staminaPanel;
     public GameObject confirmationPanel;
     public GameObject tutorialPanel;
+    public bool viewTutorial;
+    public GameObject buttonTutorial;
     public GameObject closeTutorialButton;
     public Button[] levelsButtons;
     int currentIndex = 0;
     public TextMeshProUGUI textInstrucions;
     public List<String> instructionList =new List<String>();
-
-
+    public List<float> pricesList = new List<float>();
     public bool isFadeOut;
-
-
-
-    public TextMeshProUGUI colorBuySetText;  
-
-    private int[] colorCost = new int[] { 0,5,5,5,10,12,12,2,5,10};
-   
-    private int selectedColorIndex;
- 
-
-
+    public TextMeshProUGUI colorBuySetText;   
+    private int selectedIndex;
+    [SerializeField] SaveData saveData = new SaveData();
+    public TextMeshProUGUI currencyText;
+    public PlayerData playerData;
     private Vector3 desiredMenuPosition;
+    public MenuUI menuUI;
+
+
+    private void Awake()
+    {
+        playerData.LoadGame();
+    }
+    
+
     IEnumerator Start()
     {
         confirmationPanel.SetActive(false);
         tutorialPanel.SetActive(false);
+        if(playerData.level==0)
+        {
+            buttonTutorial.SetActive(false);
 
+        }
+        else
+        {
+            buttonTutorial.SetActive(true);
+
+        }
         fadeGroup = FindObjectOfType<CanvasGroup>();
         fadeGroup.alpha = 1;
         yield return new WaitForSeconds(2.5f);              
@@ -50,7 +64,8 @@ public class MenuScene : MonoBehaviour
         InitShop();
         //add buttons to levels
         InitLevel();
-        
+        saveData.currency = playerData.currency;
+        menuUI.RefreshData();
 
     }
 
@@ -73,7 +88,9 @@ public class MenuScene : MonoBehaviour
         {
             int currentIndex = i;
             Button b = t.GetComponent<Button>();
-            b.onClick.AddListener(() => OnColorSelect(currentIndex));
+            //b.onClick.AddListener(() => OnColorSelect(currentIndex));
+            b.onClick.AddListener(() => OnItemSelect(b, currentIndex));
+            b.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text=pricesList[i].ToString();
             i++;
         }
 
@@ -127,26 +144,21 @@ public class MenuScene : MonoBehaviour
 
         }
 
-        if(menuIndex==0||menuIndex==1)
+        
+        if(menuIndex==0||menuIndex==1 || menuIndex ==2 )
         {
-            currency.SetActive(true);
-            stamina.SetActive(true);
+            currencyPanel.SetActive(true);
+            staminaPanel.SetActive(true);
 
         }
         else
         {
-            currency.SetActive(false);
-            stamina.SetActive(false);
+            currencyPanel.SetActive(false);
+            staminaPanel.SetActive(false);
         }
     }
 
-    private void SetColor(int index)
-    {
-        //change the color on the player model
-
-        //change color buyset button
-        colorBuySetText.text = "Current";
-    }
+    
 
     
 
@@ -177,54 +189,62 @@ public class MenuScene : MonoBehaviour
     }
 
    
-    private void OnColorSelect(int currentIndex)
+    private void OnItemSelect(Button btn, int currentIndex)
     {
-        Debug.Log("Color" + currentIndex);
+        selectedIndex = currentIndex;
+        clearColorButtons();
+        btn.gameObject.GetComponent<Image>().color = Color.green;
+    }
 
-        //set the selected color
-        selectedColorIndex = currentIndex;
-        //change the content of the buyset button, depending on the state of the color
-        if(SaveManager.Instance.IsColorOwned(currentIndex))
+    private void clearColorButtons()
+    {
+        int i = 0;
+        foreach (Transform t in colorPanel)
         {
-            //color is owned
-            colorBuySetText.text = "select";
+            int currentIndex = i;
+            Button b = t.GetComponent<Button>();
+            b.gameObject.GetComponent<Image>().color = Color.white;
+            i++;
         }
-        else
-        {
-            //color is not owned
-            colorBuySetText.text = "Buy:" + colorCost[currentIndex].ToString();
-        }
-
     }
 
     private void OnLevelSelect(int currentIndex)
     {
         Debug.Log("Level" + currentIndex);
-    }
-    public void OnColorBuySet()
-    {
-        Debug.Log("BuyColor");
-
-        //is the selected color owned
-        if(SaveManager.Instance.IsColorOwned(selectedColorIndex))
+        if(!viewTutorial)
         {
-            //set the color
-            SetColor(selectedColorIndex);
+            Tutorial();
+            viewTutorial = true;
         }
         else
         {
-            //attempt to buy the color
-            if(SaveManager.Instance.BuyColor(selectedColorIndex,colorCost[selectedColorIndex]))
-            {
-                //success
-                SetColor(selectedColorIndex);
-            }
-            else
-            {
-                // do not have enough gold
-                Debug.Log("not enough gold");
-            }
+            SceneLevel("Motores2");
         }
+    }
+
+    private void SceneLevel(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
+    }
+    public void OnBuy()
+    {
+        float priceItem = pricesList[selectedIndex];
+        Debug.Log(saveData.currency);
+        if (saveData.currency>priceItem)
+        {
+            float currentMoney = saveData.currency;
+            float result = currentMoney - priceItem;
+            currencyText.text = result.ToString();
+            saveData.currency = result;
+            playerData.currency = result;
+            playerData.SaveGame();
+        }
+        else
+        {
+            Debug.Log("Not enough money");
+        }
+      
+
     }
 
     public void EraseDataButton()

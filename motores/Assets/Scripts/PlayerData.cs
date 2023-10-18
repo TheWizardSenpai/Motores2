@@ -17,9 +17,9 @@ public class PlayerData : MonoBehaviour
     public void SaveGame()
     {
         
-        saveData.stamina = 0.5f;
-        saveData.currency = 1000f;
-        saveData.level = 1;
+        saveData.stamina = stamina;
+        saveData.currency =currency;
+        saveData.level = level;
 
         string json = JsonUtility.ToJson(saveData, true); //Crear el string a json                                                    
         PlayerPrefs.SetString("Data",json);
@@ -32,9 +32,13 @@ public class PlayerData : MonoBehaviour
         if (PlayerPrefs.HasKey("Data"))
         {
             string json = PlayerPrefs.GetString("Data");
-            JsonUtility.FromJson<SaveData>(json);
-            CurrentData();
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            currency = data.currency;
+            stamina = data.stamina;
+            level = data.level;          
+            
             Debug.Log("load: " + json);
+
 
         }
         else
@@ -44,11 +48,11 @@ public class PlayerData : MonoBehaviour
 
     }
 
-    private void CurrentData()
+   
+
+    public void SetCurrency(float actualCurrency)
     {
-        stamina = saveData.stamina;
-        currency = saveData.currency;
-        level = saveData.level;
+        saveData.currency = actualCurrency;
     }
 
 }

@@ -12,20 +12,17 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private Button[] levelButtons;
     private int currentLevel;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] SaveData saveData = new SaveData();
 
 
-    private void Start()
-    {
-        RefreshData();
-
-    }
+  
 
     public void RefreshData()
     {        
-        fillStamina.fillAmount = 0.5f;
+        fillStamina.fillAmount = playerData.stamina;
         staminaText.text = fillStamina.fillAmount*100f + " %";
-        currencyText.text = "1000";
-        currentLevel = 1;
+        currencyText.text = playerData.currency.ToString();
+        currentLevel = playerData.level;
         EnableButtonsLevel();
     }
 
