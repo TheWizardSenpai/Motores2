@@ -1218,7 +1218,7 @@ MonoBehaviour:
   animationDuration: 2
   selfInflicted: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -50
+  amount: -2000
   modType: 0
   critChance: 0
 --- !u!114 &746176973 stripped
@@ -2549,6 +2549,8 @@ MonoBehaviour:
   - {fileID: 78846155}
   - {fileID: 954311744}
   fighterIndex: -1
+  playerTeam: {fileID: 78846155}
+  enemyTeam: {fileID: 954311744}
 --- !u!4 &1839064884
 Transform:
   m_ObjectHideFlags: 0

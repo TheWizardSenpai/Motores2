@@ -19,6 +19,8 @@ public class CombatManager : MonoBehaviour
     [SerializeField]
     private int fighterIndex;
 
+    public Fighter playerTeam;
+    public Fighter enemyTeam;
     public int FighterIndex { get => fighterIndex; }
 
     private bool isCombatActive;
@@ -91,7 +93,11 @@ public class CombatManager : MonoBehaviour
                             LogPanel.Write("Victory!");
                             this.isCombatActive = false;
                             SceneManager.LoadScene(2);
+                        }
 
+                        if (playerTeam.isAlive == false)
+                        {
+                            SceneManager.LoadScene(3);
                         }
                     
                     else
