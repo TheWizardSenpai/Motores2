@@ -5,8 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-        
-    [SerializeField] private int coins;
+
+    public float stamina;
+    public float currency;
+    public int level;
+
+    
 
     private void Awake()
     {
@@ -18,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void sumarcoinst(int coin)
     {
-        coins += coin;
+        currency += coin;
     }
 
 }

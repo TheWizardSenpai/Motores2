@@ -5,13 +5,10 @@ using System.IO;
 using System;
 
 
-public class PlayerData : MonoBehaviour
+public class PlayerData : GameManager
 {
     [SerializeField] SaveData saveData = new SaveData();
-    public float stamina;
-    public float currency;
-    public int level;
-
+   
     
 
     public void SaveGame()
