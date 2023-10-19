@@ -38,15 +38,20 @@ public class MenuScene : MonoBehaviour
 
     private void Awake()
     {
-        playerData.LoadGame();
+       
     }
     
 
     IEnumerator Start()
     {
+        menuUI.RefreshData();
+
+        //if (PlayerPrefs.HasKey("Data"))
+        playerData.SaveGame();
+
         confirmationPanel.SetActive(false);
         tutorialPanel.SetActive(false);
-        if(playerData.level==0)
+        if(GameManager.Instance.level ==0)
         {
             buttonTutorial.SetActive(false);
 
@@ -58,14 +63,15 @@ public class MenuScene : MonoBehaviour
         }
         fadeGroup = FindObjectOfType<CanvasGroup>();
         fadeGroup.alpha = 1;
-        yield return new WaitForSeconds(2.5f);              
+        yield return new WaitForSeconds(2.5f);
+
         isFadeOut = true;
         //add buttons to shop
         InitShop();
         //add buttons to levels
         InitLevel();
-        saveData.currency = playerData.currency;
-        menuUI.RefreshData();
+        saveData.currency = GameManager.Instance.currency;
+        playerData.LoadGame();
 
     }
 
@@ -218,8 +224,16 @@ public class MenuScene : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.stamina = GameManager.Instance.stamina - 0.3f;
+
             SceneLevel("Motores2");
         }
+    }
+
+    public void RechargeStamina()
+    {
+        GameManager.Instance.stamina = GameManager.Instance.stamina + 0.05f;
+        menuUI.RefreshData();
     }
 
     private void SceneLevel(string nameScene)
@@ -236,7 +250,7 @@ public class MenuScene : MonoBehaviour
             float result = currentMoney - priceItem;
             currencyText.text = result.ToString();
             saveData.currency = result;
-            playerData.currency = result;
+            GameManager.Instance.currency = result;
             playerData.SaveGame();
         }
         else

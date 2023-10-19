@@ -19,10 +19,10 @@ public class MenuUI : MonoBehaviour
 
     public void RefreshData()
     {        
-        fillStamina.fillAmount = playerData.stamina;
+        fillStamina.fillAmount = GameManager.Instance.stamina;
         staminaText.text = fillStamina.fillAmount*100f + " %";
-        currencyText.text = playerData.currency.ToString();
-        currentLevel = playerData.level;
+        currencyText.text = GameManager.Instance.currency.ToString();
+        currentLevel = GameManager.Instance.level;
         EnableButtonsLevel();
     }
 
@@ -34,7 +34,7 @@ public class MenuUI : MonoBehaviour
             btn.interactable = false;
         }
 
-        for (int i = 0; i < currentLevel; i++)
+        for (int i = 0; i <= currentLevel; i++)
         {
             levelButtons[i].interactable = true;
 
@@ -45,10 +45,10 @@ public class MenuUI : MonoBehaviour
     public void OnClickButtonLoad()
     {
         playerData.LoadGame();
-        fillStamina.fillAmount = playerData.stamina;
+        fillStamina.fillAmount = GameManager.Instance.stamina;
         staminaText.text = fillStamina.fillAmount * 100f + " %";
-        currencyText.text = playerData.currency.ToString();
-        currentLevel = playerData.level;
+        currencyText.text = GameManager.Instance.currency.ToString();
+        currentLevel = GameManager.Instance.level;
         EnableButtonsLevel();        
     }
 
