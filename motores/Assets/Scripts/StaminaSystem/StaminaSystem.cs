@@ -62,4 +62,22 @@ public class StaminaSystem : MonoBehaviour
         else
             return DateTime.Parse(date);
     }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause) SaveInformation();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveInformation();
+    }
+
+    private void OnDisable()
+    {
+        SaveInformation();
+    }
+
+
+
 }
