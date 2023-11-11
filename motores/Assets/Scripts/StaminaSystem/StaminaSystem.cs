@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using static NotificationManager;
 
 public class StaminaSystem : MonoBehaviour
 {
@@ -18,12 +19,25 @@ public class StaminaSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI _staminaText = null;
     [SerializeField] TextMeshProUGUI _timerText = null;
 
+    [SerializeField] string _titleNotif = "Full Stamina";
+    [SerializeField] string _textNotif = "Full Stamina, vuelve a jugar";
+    [SerializeField] IconSelecter _smallIcon = IconSelecter.icon_reminder;
+    [SerializeField] IconSelecter _largeIcon = IconSelecter.icon_reminderBig;
+    [SerializeField] 
+    TimeSpan timer;
+    int id;
+
     // Start is called before the first frame update
     void Start()
     {
         LoadData();
         StartCoroutine(RechargeStamina());
-
+        if(_currentStamina<_maxStamina)
+        {
+            timer = _nextStaminaTime - DateTime.Now;
+            id = Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
+                AddDuration(DateTime.Now, ((_maxStamina-_currentStamina+1)*_timeToRecharge)+1+(float)timer.TotalSeconds));
+        }
     }
 
 
@@ -72,8 +86,12 @@ public class StaminaSystem : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+        NotificationManager.Instance.CancelNotification(id);
+
         recharging = false;
     }
+
+    
 
     private DateTime AddDuration(DateTime timeToAdd, float timeToRecharge)
     {
@@ -94,7 +112,10 @@ public class StaminaSystem : MonoBehaviour
             //jugar nivel
             _currentStamina -= staminaToUse;
             UpdateStamina();
-            if(!recharging)
+            NotificationManager.Instance.CancelNotification(id);
+            id = Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
+               AddDuration(DateTime.Now, ((_maxStamina - _currentStamina + 1) * _timeToRecharge) + 1 + (float)timer.TotalSeconds));
+            if (!recharging)
             {
                 // setear next stamina time y comenzar recarga
                 _nextStaminaTime = AddDuration(DateTime.Now, _timeToRecharge);

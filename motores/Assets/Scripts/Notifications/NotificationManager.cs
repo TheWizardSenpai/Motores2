@@ -37,9 +37,9 @@ public class NotificationManager : MonoBehaviour
         };
         AndroidNotificationCenter.RegisterNotificationChannel(notifChannel);
         DisplayNotification("Vuelve", "Juega otra vez", 
-            IconSelect.icon_reminder, IconSelect.icon_reminderBig, DateTime.Now.AddHours(24));
+            IconSelecter.icon_reminder, IconSelecter.icon_reminderBig, DateTime.Now.AddHours(24));
     }
-    public int DisplayNotification(string title, string text, IconSelect iconSmall, IconSelect iconLarge, DateTime fireTime)
+    public int DisplayNotification(string title, string text, IconSelecter iconSmall, IconSelecter iconLarge, DateTime fireTime)
     {
         var notification = new AndroidNotification();
         notification.Title = title;
@@ -58,7 +58,7 @@ public class NotificationManager : MonoBehaviour
         AndroidNotificationCenter.CancelScheduledNotification(id);
     }
 
-    public enum IconSelect
+    public enum IconSelecter
     {
         icon_reminder,
         icon_reminderBig
