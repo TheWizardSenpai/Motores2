@@ -37,7 +37,7 @@ public class NotificationManager : MonoBehaviour
         };
         AndroidNotificationCenter.RegisterNotificationChannel(notifChannel);
         DisplayNotification("Vuelve", "Juega otra vez", 
-            IconSelecter.icon_reminder, IconSelecter.icon_reminderBig, DateTime.Now.AddHours(24));
+            IconSelecter.icon_reminder, IconSelecter.icon_reminderbig, DateTime.Now.AddHours(24));
     }
     public int DisplayNotification(string title, string text, IconSelecter iconSmall, IconSelecter iconLarge, DateTime fireTime)
     {
@@ -61,7 +61,7 @@ public class NotificationManager : MonoBehaviour
     public enum IconSelecter
     {
         icon_reminder,
-        icon_reminderBig
+        icon_reminderbig
 
     }
 }

@@ -22,7 +22,7 @@ public class StaminaSystem : MonoBehaviour
     [SerializeField] string _titleNotif = "Full Stamina";
     [SerializeField] string _textNotif = "Full Stamina, vuelve a jugar";
     [SerializeField] IconSelecter _smallIcon = IconSelecter.icon_reminder;
-    [SerializeField] IconSelecter _largeIcon = IconSelecter.icon_reminderBig;
+    [SerializeField] IconSelecter _largeIcon = IconSelecter.icon_reminderbig;
     [SerializeField] 
     TimeSpan timer;
     int id;

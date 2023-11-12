@@ -39,10 +39,21 @@
         },
         "DrawableResources": [
             {
-                "Id": "icon_0",
+                "Id": "icon_reminder",
                 "Type": 0,
                 "Asset": {
-                    "instanceID": 0
+                    "fileID": 2800000,
+                    "guid": "74a49b7ba2a5ad848aa2dce4ca2bca78",
+                    "type": 3
+                }
+            },
+            {
+                "Id": "icon_reminderbig",
+                "Type": 1,
+                "Asset": {
+                    "fileID": 2800000,
+                    "guid": "74a49b7ba2a5ad848aa2dce4ca2bca78",
+                    "type": 3
                 }
             }
         ]
