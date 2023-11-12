@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
     public float stamina;
     public float currency;
     public int level;
-
-    
+    public bool isFirstTime = true;
 
     private void Awake()
     {
@@ -25,10 +24,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+  
+
     public void sumarcoinst(int coin)
     {
         currency += coin;
     }
+
+    
 
 }
 

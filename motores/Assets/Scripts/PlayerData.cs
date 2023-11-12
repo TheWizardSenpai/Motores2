@@ -7,8 +7,27 @@ using System;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] SaveData saveData = new SaveData(); 
+    [SerializeField] SaveData saveData = new SaveData();
 
+    private static PlayerData instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public static PlayerData Get ()
+    {
+        return instance;
+    }    
 
     public void SaveGame()
     {
@@ -30,11 +49,11 @@ public class PlayerData : MonoBehaviour
             //string myJson = "load:{\"stamina\":100.0,\"currency\":0.0,\"level\":0}";
             string json = PlayerPrefs.GetString("Data");
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-            GameManager.Instance.currency = data.currency;
-            GameManager.Instance.stamina = data.stamina;
-            GameManager.Instance.level = data.level;          
-            
-            Debug.Log("load: " + json);
+        GameManager.Instance.currency = data.currency;
+        GameManager.Instance.stamina = data.stamina;
+        GameManager.Instance.level = data.level;
+
+        Debug.Log("load: " + json);
 
 
         

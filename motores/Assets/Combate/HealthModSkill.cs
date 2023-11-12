@@ -27,12 +27,12 @@ public class HealthModSkill : Skill
         {
             amount *= 2f;
             LogPanel.Write("Critical hit!");
-            LogPanel.Write("Hit for " + amount + (" to " + receiver.idName));
+            LogPanel.Write("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
         }
 
         else
         {
-            LogPanel.Write("Hit for " + amount + (" to " + receiver.idName));
+            LogPanel.Write("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
         }
 
 

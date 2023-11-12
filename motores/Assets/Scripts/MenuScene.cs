@@ -34,7 +34,7 @@ public class MenuScene : MonoBehaviour
     public PlayerData playerData;
     private Vector3 desiredMenuPosition;
     public MenuUI menuUI;
-
+    public bool isFirstTime = true;
 
     private void Awake()
     {
@@ -48,7 +48,6 @@ public class MenuScene : MonoBehaviour
 
         //if (PlayerPrefs.HasKey("Data"))
         playerData.SaveGame();
-
         confirmationPanel.SetActive(false);
         tutorialPanel.SetActive(false);
         if(GameManager.Instance.level ==0)
@@ -61,11 +60,16 @@ public class MenuScene : MonoBehaviour
             buttonTutorial.SetActive(true);
 
         }
-        fadeGroup = FindObjectOfType<CanvasGroup>();
-        fadeGroup.alpha = 1;
-        yield return new WaitForSeconds(2.5f);
 
-        isFadeOut = true;
+        if(GameManager.Instance.isFirstTime)
+        {
+            fadeGroup = FindObjectOfType<CanvasGroup>();
+            fadeGroup.alpha = 1;
+            yield return new WaitForSeconds(2.5f);
+            isFadeOut = true;
+            GameManager.Instance.isFirstTime = false;
+
+        }
         //add buttons to shop
         InitShop();
         //add buttons to levels
@@ -77,8 +81,13 @@ public class MenuScene : MonoBehaviour
 
     private void Update()
     {
-        if(isFadeOut)
-        fadeGroup.alpha -= Time.deltaTime * fadeInSpeed;
+       
+            if (isFadeOut)
+            {
+                fadeGroup.alpha -= Time.deltaTime * fadeInSpeed;
+            }    
+            
+        
         // Menu navigation
         menuContainer.anchoredPosition3D = Vector3.Lerp(menuContainer.anchoredPosition3D, desiredMenuPosition, 0.1f);
     }
@@ -214,7 +223,7 @@ public class MenuScene : MonoBehaviour
         }
     }
 
-    private void OnLevelSelect(int currentIndex)
+    private void OnLevelSelect(int currentIndex) // para despues
     {
         Debug.Log("Level" + currentIndex);
         if(!viewTutorial)
@@ -269,6 +278,11 @@ public class MenuScene : MonoBehaviour
     public void DeleteData()
     {
         PlayerPrefs.DeleteAll();
+        GameManager.Instance.currency = 0;
+        GameManager.Instance.level = 0;
+        GameManager.Instance.stamina = 0;
+        menuUI.RefreshData();
+        PlayerData.Get().SaveGame();
         confirmationPanel.SetActive(false);
     }
 

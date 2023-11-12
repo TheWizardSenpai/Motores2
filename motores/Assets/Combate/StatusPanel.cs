@@ -6,8 +6,7 @@ public class StatusPanel : MonoBehaviour
     public Text nameLabel;
     public Text levelLabel;
 
-    public Slider healthSlider;
-    public Image healthSliderBar;
+    public Image healthBar;
     public Text healthLabel;
 
 
@@ -24,14 +23,12 @@ public class StatusPanel : MonoBehaviour
         this.healthLabel.text = $"{Mathf.RoundToInt(health)} / {Mathf.RoundToInt(maxHealth)}";
         float percentage = health / maxHealth;
 
-        this.healthSlider.value = percentage;
+        this.healthBar.fillAmount = percentage;
         //Si el porcentaje de vida es menor al 33% el color de la vida se vuelve rojo
         if (percentage < 0.33f)
         {
-            this.healthSliderBar.color = Color.red;
+            this.healthBar.color = Color.red;
         }
-        {
-
-        }
+        
     }
 }

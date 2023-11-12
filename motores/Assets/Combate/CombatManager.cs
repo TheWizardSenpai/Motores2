@@ -101,6 +101,8 @@ public class CombatManager : MonoBehaviour
                         if (fgtr.isAlive == false)
                         {
                             GameManager.Instance.sumarcoinst(5);
+                            GameManager.Instance.level++;
+                            PlayerData.Get().SaveGame();
                             LogPanel.Write("Victory!");
                             this.isCombatActive = false;
                             SceneManager.LoadScene(2);

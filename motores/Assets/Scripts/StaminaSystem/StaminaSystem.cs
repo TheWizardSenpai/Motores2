@@ -86,7 +86,7 @@ public class StaminaSystem : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-        NotificationManager.Instance.CancelNotification(id);
+       // NotificationManager.Instance.CancelNotification(id);
 
         recharging = false;
     }
@@ -170,7 +170,8 @@ public class StaminaSystem : MonoBehaviour
 
     void LoadData()
     {
-        _currentStamina = PlayerPrefs.GetInt(SaveData.currentStaminaKey, _maxStamina);
+        _currentStamina = 7;
+        //_currentStamina = PlayerPrefs.GetInt(SaveData.currentStaminaKey, _maxStamina);
 
         //_nextStaminaTime = DateTime.Parse(PlayerPrefs.GetString(SaveData.nextStaminaTimeKey));
         //_lastStaminaTime = DateTime.Parse(PlayerPrefs.GetString(SaveData.lastStaminaTimeKey));

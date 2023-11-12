@@ -1,12 +1,14 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerSkillPanel : MonoBehaviour
 {
     public GameObject[] skillButtons;
     public Text[] skillButtonLabels;
     public GameObject skillPanel;
+    public TextMeshProUGUI levelText;
 
     private void Awake()
     {
@@ -17,6 +19,10 @@ public class PlayerSkillPanel : MonoBehaviour
             btn.SetActive(false);
         }
 
+    }
+    private void Start()
+    {
+        levelText.text = "Level " + (GameManager.Instance.level+1).ToString();
     }
     public void ConfigureButtons(int index, string skillName)
     {
