@@ -36,11 +36,12 @@ public class MenuScene : MonoBehaviour
     public MenuUI menuUI;
     public bool isFirstTime = true;
 
-    private void Awake()
-    {
-       
-    }
-    
+    //Inventario
+    private Inventory inventory = new Inventory();
+    Potion.PotionType currentType;
+    public Transform parentItemsPanel;
+    public GameObject[] itemsPrefab;
+
 
     IEnumerator Start()
     {
@@ -207,6 +208,21 @@ public class MenuScene : MonoBehaviour
     private void OnItemSelect(Button btn, int currentIndex)
     {
         selectedIndex = currentIndex;
+        switch (currentIndex)
+        {
+            case 0:
+                currentType = Potion.PotionType.Type1;
+                break;
+            case 1:
+                currentType = Potion.PotionType.Type2;
+                break;
+            case 2:
+                currentType = Potion.PotionType.Type3;
+                break;
+            case 3:
+                currentType = Potion.PotionType.Type4;
+                break;
+        }
         clearColorButtons();
         btn.gameObject.GetComponent<Image>().color = Color.green;
     }
@@ -255,12 +271,19 @@ public class MenuScene : MonoBehaviour
         Debug.Log(saveData.currency);
         if (saveData.currency>priceItem)
         {
+            Potion newPotion = new Potion(currentType);
+            inventory.addPotions(newPotion);
+
+            Instantiate(itemsPrefab[selectedIndex],parentItemsPanel);
+
             float currentMoney = saveData.currency;
             float result = currentMoney - priceItem;
             currencyText.text = result.ToString();
             saveData.currency = result;
             GameManager.Instance.currency = result;
             playerData.SaveGame();
+            Debug.Log("Compra "+currentType);
+
         }
         else
         {
