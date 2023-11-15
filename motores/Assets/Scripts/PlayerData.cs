@@ -43,7 +43,6 @@ public class PlayerData : MonoBehaviour
 
     public void LoadGame()
     {
-
         //if (PlayerPrefs.HasKey("Data"))
         
             //string myJson = "load:{\"stamina\":100.0,\"currency\":0.0,\"level\":0}";
@@ -53,15 +52,9 @@ public class PlayerData : MonoBehaviour
         GameManager.Instance.stamina = data.stamina;
         GameManager.Instance.level = data.level;
 
-        Debug.Log("load: " + json);
-
-
-        
-       
-
+        Debug.Log("load: " + json);   
     }
-
-   
+      
 
     public void SetCurrency(float actualCurrency)
     {

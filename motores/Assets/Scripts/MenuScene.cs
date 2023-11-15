@@ -77,6 +77,8 @@ public class MenuScene : MonoBehaviour
         InitLevel();
         saveData.currency = GameManager.Instance.currency;
         playerData.LoadGame();
+        inventory.LoadInventory();
+        InstantiatePotions();
 
     }
 
@@ -106,7 +108,7 @@ public class MenuScene : MonoBehaviour
             Button b = t.GetComponent<Button>();
             //b.onClick.AddListener(() => OnColorSelect(currentIndex));
             b.onClick.AddListener(() => OnItemSelect(b, currentIndex));
-            b.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text=pricesList[i].ToString();
+            b.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text= "$" + pricesList[i].ToString();
             i++;
         }
 
@@ -208,6 +210,8 @@ public class MenuScene : MonoBehaviour
     private void OnItemSelect(Button btn, int currentIndex)
     {
         selectedIndex = currentIndex;
+        Debug.Log(selectedIndex);
+
         switch (currentIndex)
         {
             case 0:
@@ -265,16 +269,42 @@ public class MenuScene : MonoBehaviour
     {
         SceneManager.LoadScene(nameScene);
     }
-    public void OnBuy()
+    public void OnBuy(int quantity = 1)
     {
         float priceItem = pricesList[selectedIndex];
         Debug.Log(saveData.currency);
         if (saveData.currency>priceItem)
         {
-            Potion newPotion = new Potion(currentType);
-            inventory.addPotions(newPotion);
+            Potion newPotion = new Potion(currentType, quantity);
+            inventory.AddPotion(newPotion);
 
-            Instantiate(itemsPrefab[selectedIndex],parentItemsPanel);
+            if (parentItemsPanel.transform.childCount > 0)
+            {
+                bool found = false;
+
+                foreach (Transform child in parentItemsPanel.transform)
+                {
+                    if (child.name == selectedIndex.ToString() + "(Clone)")
+                    {
+                        Debug.Log(selectedIndex.ToString() + "(Clone)");
+
+                        int a = int.Parse(child.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text);
+                        int b = a + quantity;
+
+                        child.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = b.ToString();
+                        found = true;
+                        break;
+                    }                    
+                }
+                if (!found)
+                {
+                    Instantiate(itemsPrefab[selectedIndex], parentItemsPanel);
+                }
+            }
+            else
+            {
+                Instantiate(itemsPrefab[selectedIndex], parentItemsPanel);
+            }
 
             float currentMoney = saveData.currency;
             float result = currentMoney - priceItem;
@@ -282,16 +312,30 @@ public class MenuScene : MonoBehaviour
             saveData.currency = result;
             GameManager.Instance.currency = result;
             playerData.SaveGame();
-            Debug.Log("Compra "+currentType);
-
+            inventory.SaveInventory();
+            Debug.Log("Compra " + currentType);
         }
         else
         {
             Debug.Log("Not enough money");
         }
-      
-
     }
+
+    private void InstantiatePotions()
+    {
+        foreach (Potion potion in inventory.GetPotions())
+        {
+            if (potion.Quantity > 0)
+            {
+                int prefabIndex = (int)potion.potionType;
+                GameObject potionPrefab = itemsPrefab[prefabIndex];
+                GameObject potionInstance = Instantiate(potionPrefab, parentItemsPanel);
+                TextMeshProUGUI quantityText = potionInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+                quantityText.text = potion.Quantity.ToString();             
+            }
+        }
+    }
+
 
     public void EraseDataButton()
     {
@@ -333,11 +377,6 @@ public class MenuScene : MonoBehaviour
             textInstrucions.text = instructionList[currentIndex];
             yield return new WaitForSeconds(4);
             currentIndex = (currentIndex + 1) % instructionList.Count;
-        }
-        
-
-
+        }      
     }
-
-
 }
