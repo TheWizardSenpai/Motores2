@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public float stamina;
     public float currency;
     public int level;
+    public string nextStamina;
+    public string lastStamina;
+
     public bool isFirstTime = true;
 
     private void Awake()
@@ -22,16 +25,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-  
+    }  
 
     public void sumarcoinst(int coin)
     {
         currency += coin;
-    }
-
-    
-
+    } 
 }
 

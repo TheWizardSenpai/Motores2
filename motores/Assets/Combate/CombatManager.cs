@@ -100,7 +100,7 @@ public class CombatManager : MonoBehaviour
                     {
                         if (fgtr.isAlive == false)
                         {
-                            GameManager.Instance.sumarcoinst(5);
+                            GameManager.Instance.sumarcoinst(30);
                             GameManager.Instance.level++;
                             PlayerData.Get().SaveGame();
                             LogPanel.Write("Victory!");

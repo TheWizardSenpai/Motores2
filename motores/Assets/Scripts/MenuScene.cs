@@ -42,16 +42,21 @@ public class MenuScene : MonoBehaviour
     public Transform parentItemsPanel;
     public GameObject[] itemsPrefab;
 
+    [SerializeField] private GameObject panelNeedStamina;
+    [SerializeField] private StaminaSystem staminaSystem;
 
     IEnumerator Start()
     {
         menuUI.RefreshData();
 
-        //if (PlayerPrefs.HasKey("Data"))
-        playerData.SaveGame();
+        if (!PlayerPrefs.HasKey("Data"))
+            playerData.SaveGame();
+
         confirmationPanel.SetActive(false);
         tutorialPanel.SetActive(false);
-        if(GameManager.Instance.level ==0)
+        panelNeedStamina.SetActive(false);
+
+        if (GameManager.Instance.level ==0)
         {
             buttonTutorial.SetActive(false);
 
@@ -253,17 +258,26 @@ public class MenuScene : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.stamina = GameManager.Instance.stamina - 0.3f;
+            if(GameManager.Instance.stamina >= 25)
+            {
+                GameManager.Instance.stamina = GameManager.Instance.stamina - 25f;
+                PlayerData.Get().SaveGame();
+                staminaSystem.ResetData((int)GameManager.Instance.stamina);
 
-            SceneLevel("Motores2");
+                SceneLevel("Motores2");
+            }
+            else
+            {
+                panelNeedStamina.SetActive(true);
+            }
         }
     }
 
-    public void RechargeStamina()
-    {
-        GameManager.Instance.stamina = GameManager.Instance.stamina + 0.05f;
-        menuUI.RefreshData();
-    }
+    //public void RechargeStamina()
+    //{
+    //    GameManager.Instance.stamina = GameManager.Instance.stamina + 0.05f;
+    //    menuUI.RefreshData();
+    //}
 
     private void SceneLevel(string nameScene)
     {
@@ -345,9 +359,10 @@ public class MenuScene : MonoBehaviour
     public void DeleteData()
     {
         PlayerPrefs.DeleteAll();
-        GameManager.Instance.currency = 0;
+        GameManager.Instance.currency = 200;
         GameManager.Instance.level = 0;
-        GameManager.Instance.stamina = 0;
+        GameManager.Instance.stamina = 50;
+        staminaSystem.ResetData(50);
         menuUI.RefreshData();
         PlayerData.Get().SaveGame();
         confirmationPanel.SetActive(false);

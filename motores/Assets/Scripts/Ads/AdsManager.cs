@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using TMPro;
 
 public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] string gameID = "5472025";
     [SerializeField] string rewardedAdID = "Rewarded_Android";
-
+    [SerializeField] TextMeshProUGUI rewardText;
+    [SerializeField] GameObject rewardPanel;
+    [SerializeField] private int rewardFull = 20;
+    [SerializeField] private int rewardHalf = 10;
+    [SerializeField] private MenuUI menuUI;
 
     private void Start()
     {
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameID);
-
+        rewardPanel.SetActive(false);
     }
-
 
     public void ShowAd()
     {
@@ -31,13 +35,13 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        //Cuando el anuncio comienza se escutará este método
+        //Cuando el anuncio comienza se ejecutará este método
     }
 
     public void OnUnityAdsReady(string placementId)
     {
         //Cuando el anuncia se pre carga, se ejecutará este método.
-        Debug.Log("Is ready ti show");
+        //Debug.Log("Is ready ti show");
 
     }
 
@@ -46,11 +50,22 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         //Cuando el anuncio terminó de verse completo o la mitad, se ejecutará este método
         if(placementId==rewardedAdID)
         {
-            if (showResult == ShowResult.Finished) Debug.Log("Full rewards");
-            else if (showResult == ShowResult.Skipped) Debug.Log("Half rewards");
-            else if (showResult == ShowResult.Failed) Debug.Log("No rewards");
+            rewardPanel.SetActive(true);
 
+            if (showResult == ShowResult.Finished)
+            {
+                rewardText.text = "You earn " + rewardFull + " coins!";
+                GameManager.Instance.sumarcoinst(rewardFull);
+            }
 
+            else if (showResult == ShowResult.Skipped)
+            {
+                rewardText.text = "You earn " + rewardHalf + " coins!";
+                GameManager.Instance.sumarcoinst(rewardHalf);
+            }
+
+            PlayerData.Get().SaveGame();
+            menuUI.RefreshData();
         }
     }
 }

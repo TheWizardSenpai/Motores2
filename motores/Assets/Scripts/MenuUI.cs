@@ -14,12 +14,9 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [SerializeField] SaveData saveData = new SaveData();
 
-
-  
-
     public void RefreshData()
     {        
-        fillStamina.fillAmount = GameManager.Instance.stamina;
+        fillStamina.fillAmount = GameManager.Instance.stamina / 100;
         staminaText.text = fillStamina.fillAmount*100f + " %";
         currencyText.text = GameManager.Instance.currency.ToString();
         currentLevel = GameManager.Instance.level;
@@ -37,9 +34,7 @@ public class MenuUI : MonoBehaviour
         for (int i = 0; i <= currentLevel; i++)
         {
             levelButtons[i].interactable = true;
-
         }      
-
     }
 
     public void OnClickButtonLoad()

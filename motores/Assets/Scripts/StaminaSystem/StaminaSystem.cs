@@ -16,30 +16,36 @@ public class StaminaSystem : MonoBehaviour
 
     bool recharging;
 
-    [SerializeField] TextMeshProUGUI _staminaText = null;
+    //[SerializeField] TextMeshProUGUI _staminaText = null;
     [SerializeField] TextMeshProUGUI _timerText = null;
 
     [SerializeField] string _titleNotif = "Full Stamina";
-    [SerializeField] string _textNotif = "Full Stamina, vuelve a jugar";
+    [SerializeField] string _textNotif = "Vuelve a jugar!";
     [SerializeField] IconSelecter _smallIcon = IconSelecter.icon_reminder;
     [SerializeField] IconSelecter _largeIcon = IconSelecter.icon_reminderbig;
-    [SerializeField] 
+    [SerializeField]
     TimeSpan timer;
     int id;
+    [SerializeField] private MenuUI menuUI;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadData();
         StartCoroutine(RechargeStamina());
-        if(_currentStamina<_maxStamina)
+        if (_currentStamina < _maxStamina)
         {
             timer = _nextStaminaTime - DateTime.Now;
             id = Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
-                AddDuration(DateTime.Now, ((_maxStamina-_currentStamina+1)*_timeToRecharge)+1+(float)timer.TotalSeconds));
+                AddDuration(DateTime.Now, ((_maxStamina - _currentStamina + 1) * _timeToRecharge) + 1 + (float)timer.TotalSeconds));
         }
     }
 
+    public void ResetData(int c)
+    {
+        _currentStamina = c;
+        timer = _nextStaminaTime - DateTime.Now;        
+    }
 
     IEnumerator RechargeStamina()
     {
@@ -47,57 +53,55 @@ public class StaminaSystem : MonoBehaviour
         UpdateStamina();
         recharging = true;
 
-        while(_currentStamina<_maxStamina)
+        while (_currentStamina < _maxStamina)
         {
             DateTime current = DateTime.Now;
             DateTime nexTime = _nextStaminaTime;
             // bool chequea se recargo stamina
 
             bool addingStamina = false;
-            while(current > nexTime)
+            while (current > nexTime)
             {
                 if (_currentStamina >= _maxStamina) break;
                 _currentStamina += 1;
                 addingStamina = true;
+
                 UpdateStamina();
+                SaveInformation();
 
                 // predecir prox ves que se va a recargar la stamina
                 DateTime timeToAdd = nexTime;
                 // chequear si el usuario cerro la app
 
-                if(_lastStaminaTime>nexTime)
+                if (_lastStaminaTime > nexTime)
                 {
                     timeToAdd = _lastStaminaTime;
                 }
                 nexTime = AddDuration(timeToAdd, _timeToRecharge);
 
-            }    
+            }
             // si se recargo stamina
-            if(addingStamina)
+            if (addingStamina)
             {
                 _nextStaminaTime = nexTime;
                 _lastStaminaTime = DateTime.Now;
-            }
-
-            //update ui 
-            SaveInformation();
-            UpdateStamina();
+            }     
+            
             UpdateTimer();
 
             yield return new WaitForEndOfFrame();
         }
-       // NotificationManager.Instance.CancelNotification(id);
+        // NotificationManager.Instance.CancelNotification(id);
 
         recharging = false;
     }
 
-    
+
 
     private DateTime AddDuration(DateTime timeToAdd, float timeToRecharge)
     {
         return timeToAdd.AddSeconds(timeToRecharge);
         //return timeToAdd.AddMinutes(timeToRecharge);
-
     }
 
     public bool HasEnoughStamina(int stamina)
@@ -105,14 +109,14 @@ public class StaminaSystem : MonoBehaviour
         return _currentStamina - stamina >= 0;
     }
 
-    public void UseStamina( int staminaToUse)
+    public void UseStamina(int staminaToUse)
     {
-        if(_currentStamina - staminaToUse >= 0)
+        if (_currentStamina - staminaToUse >= 0)
         {
             //jugar nivel
             _currentStamina -= staminaToUse;
             UpdateStamina();
-            NotificationManager.Instance.CancelNotification(id);
+            //NotificationManager.Instance.CancelNotification(id);
             id = Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
                AddDuration(DateTime.Now, ((_maxStamina - _currentStamina + 1) * _timeToRecharge) + 1 + (float)timer.TotalSeconds));
             if (!recharging)
@@ -128,11 +132,13 @@ public class StaminaSystem : MonoBehaviour
         }
     }
 
-
     private void UpdateStamina()
     {
-        _staminaText.text = $"{_currentStamina}/{_maxStamina}";
+        //_staminaText.text = $"{_currentStamina}/{_maxStamina}";
         //_staminaText.text = _currentStamina.ToString("");
+
+        GameManager.Instance.stamina = _currentStamina;
+        menuUI.RefreshData();
     }
 
     private void UpdateTimer()
@@ -149,36 +155,32 @@ public class StaminaSystem : MonoBehaviour
         //formato ceros para representar horario como su fuese reloj
 
         _timerText.text = timer.Minutes.ToString("00") + ":" + timer.Seconds.ToString("00");
-
-
     }
 
 
     void SaveInformation()
     {
-       
-        //current stamina
-        //next Stamina time
-        //last satimana time
+        //PlayerPrefs.SetInt(SaveData.currentStaminaKey, _currentStamina);
+        //PlayerPrefs.SetString(SaveData.nextStaminaTimeKey, _nextStaminaTime.ToString());
+        //PlayerPrefs.SetString(SaveData.lastStaminaTimeKey, _lastStaminaTime.ToString());
 
-        PlayerPrefs.SetInt(SaveData.currentStaminaKey,_currentStamina);
-        PlayerPrefs.SetString(SaveData.nextStaminaTimeKey, _nextStaminaTime.ToString());
-        PlayerPrefs.SetString(SaveData.lastStaminaTimeKey, _lastStaminaTime.ToString());
+        GameManager.Instance.stamina = _currentStamina;
+        GameManager.Instance.nextStamina = _nextStaminaTime.ToString();
+        GameManager.Instance.lastStamina = _lastStaminaTime.ToString();
 
-
+        PlayerData.Get().SaveGame();
     }
 
     void LoadData()
     {
-        _currentStamina = 7;
-        //_currentStamina = PlayerPrefs.GetInt(SaveData.currentStaminaKey, _maxStamina);
+        PlayerData.Get().LoadGame();
 
-        //_nextStaminaTime = DateTime.Parse(PlayerPrefs.GetString(SaveData.nextStaminaTimeKey));
-        //_lastStaminaTime = DateTime.Parse(PlayerPrefs.GetString(SaveData.lastStaminaTimeKey));
+        _currentStamina = (int)GameManager.Instance.stamina;
+        _nextStaminaTime = StringToDateTime(GameManager.Instance.nextStamina);
+        _lastStaminaTime = StringToDateTime(GameManager.Instance.lastStamina);
 
-        _nextStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.nextStaminaTimeKey));
-        _lastStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.lastStaminaTimeKey));
-
+        //_nextStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.nextStaminaTimeKey));
+        //_lastStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.lastStaminaTimeKey));
     }
 
     DateTime StringToDateTime(string date)
