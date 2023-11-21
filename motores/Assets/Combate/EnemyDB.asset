@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129fcb83f4c849a43bed683f0274307b, type: 3}
+  m_Name: EnemyDB
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDateBase
+  EnemyDB:
+  - isMainCharacter: 0
+    isSecondaryCharacter: 0
+    enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+    prefabIndex: 1
+    maxHealth: 70
+    level: 15
+    attack: 20
+    deffense: 20
+    spirit: 20
+    speed: 15
+    Description: Mago
+    LargeDescription: Mago del primer nivel
+    Name: Wizard
+    CharacterSwitcherIndex: 0
+  - isMainCharacter: 0
+    isSecondaryCharacter: 0
+    enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+    prefabIndex: 1
+    maxHealth: 80
+    level: 20
+    attack: 25
+    deffense: 25
+    spirit: 10
+    speed: 10
+    Description: Mago
+    LargeDescription: Mago del segundo nivel
+    Name: Wizard
+    CharacterSwitcherIndex: 0

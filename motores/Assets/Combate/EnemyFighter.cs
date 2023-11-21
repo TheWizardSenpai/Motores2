@@ -3,9 +3,18 @@ using System.Collections;
 
 public class EnemyFighter : Fighter
 {
+    public int EnemyIndex;
+    public EnemyDataBase EnemyDateBase;
     void Awake()
     {
-        this.stats = new Stats(20, 50, 40, 30, 60);
+        var data = EnemyDateBase.EnemyDB[EnemyIndex];
+        //_IAEnemySimple = gameObject.GetComponent<IAEnemySimple>();
+        //
+
+        if (data.level != 0)
+            this.stats = new Stats(data.level, data.maxHealth, data.attack, data.deffense, data.spirit);
+        else
+            this.stats = new Stats(20, 50, 40, 30, 60);
     }
 
     public override void InitTurn()
