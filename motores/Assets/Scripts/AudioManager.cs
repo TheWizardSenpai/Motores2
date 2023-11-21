@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource musicAudio;
     public AudioSource FXAudio;
+    public AudioSource Buttons;
+    public AudioSource Level;
     public Slider sliderVolume;
 
     private void Awake()
@@ -39,5 +41,15 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log(volumen);
         musicAudio.volume = volumen;
+    }
+
+    public void sounds()
+    {
+        Buttons.Play(2);
+    }
+
+    public void selectlevel()
+    {
+        Level.Play(3);
     }
 }
