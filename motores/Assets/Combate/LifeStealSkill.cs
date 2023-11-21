@@ -15,8 +15,8 @@ public class LifeStealSkill : Skill
 
 
 
-        LogPanel.Write("Hit for " + (int)remainingDamage + " to " + receiver.idName);
-        LogPanel.Write("Stole " + (int)healedAmount + " life from " + receiver.idName);
+        this.messages.Enqueue("Hit for " + (int)remainingDamage + " to " + receiver.idName);
+        this.messages.Enqueue("Stole " + (int)healedAmount + " life from " + receiver.idName);
 
         receiver.ModifyHealth(-(int)remainingDamage); // REDUCE LA VIDA DEL RECEIVER
         emitter.ModifyHealth((int)healedAmount); // AUMENTA LA VIDA DEL EMISOR

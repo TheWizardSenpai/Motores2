@@ -18,9 +18,9 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
     prefabIndex: 0
     maxHealth: 70
-    level: 15
-    attack: 20
-    deffense: 20
+    level: 20
+    attack: 35
+    deffense: 35
     spirit: 20
     speed: 15
     Description: Mago
@@ -32,9 +32,9 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
     prefabIndex: 1
     maxHealth: 80
-    level: 20
-    attack: 25
-    deffense: 25
+    level: 25
+    attack: 40
+    deffense: 40
     spirit: 10
     speed: 10
     Description: Mago

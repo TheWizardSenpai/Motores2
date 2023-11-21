@@ -74,22 +74,21 @@ public class CombatManager : MonoBehaviour
 
                     // Wait for fighter skill animation
                     yield return new WaitForSeconds(currentFighterSkill.animationDuration);
-                    this.combatStatus = CombatStatus.CHECK_FOR_VICTORY;
+                    this.combatStatus = CombatStatus.CHECK_ACTION_MESSAGES;
 
-                    currentFighterSkill = null;
                     break;
                 case CombatStatus.CHECK_ACTION_MESSAGES:
                     string nextMessage = this.currentFighterSkill.GetNextMessage();
                     if (nextMessage != null)
                     {
                         LogPanel.Write(nextMessage);
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(1f);
                     }
                     else
                     {
                         this.currentFighterSkill = null;
                         this.combatStatus = CombatStatus.CHECK_FOR_VICTORY;
-                        yield return new WaitForSeconds(2f);
+                        yield return null;
                     }
 
                     break;
