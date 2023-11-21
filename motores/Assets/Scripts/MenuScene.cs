@@ -18,9 +18,9 @@ public class MenuScene : MonoBehaviour
     public GameObject staminaPanel;
     public GameObject confirmationPanel;
     public GameObject tutorialPanel;
-    public bool viewTutorial;
     public GameObject buttonTutorial;
-    public GameObject closeTutorialButton;
+    public Slider volumeSlider;
+
     public Button[] levelsButtons;
     int currentIndex = 0;
     public TextMeshProUGUI textInstrucions;
@@ -56,16 +56,7 @@ public class MenuScene : MonoBehaviour
         tutorialPanel.SetActive(false);
         panelNeedStamina.SetActive(false);
 
-        if (GameManager.Instance.level ==0)
-        {
-            buttonTutorial.SetActive(false);
-
-        }
-        else
-        {
-            buttonTutorial.SetActive(true);
-
-        }
+        
 
         if(GameManager.Instance.isFirstTime)
         {
@@ -76,12 +67,10 @@ public class MenuScene : MonoBehaviour
             GameManager.Instance.isFirstTime = false;
 
         }
-        //add buttons to shop
+
         InitShop();
-        //add buttons to levels
         InitLevel();
         saveData.currency = GameManager.Instance.currency;
-        playerData.LoadGame();
         inventory.LoadInventory();
         InstantiatePotions();
 
@@ -118,8 +107,6 @@ public class MenuScene : MonoBehaviour
         }
 
         i = 0; //reset index
-       
-
     }
 
     private void InitLevel()
@@ -136,9 +123,7 @@ public class MenuScene : MonoBehaviour
             Button b = t.GetComponent<Button>();
             b.onClick.AddListener(() => OnLevelSelect(currentIndex));
             i++;
-        }
-      
-        
+        }   
     }
 
     private void NavigateTo(int menuIndex)
@@ -155,6 +140,15 @@ public class MenuScene : MonoBehaviour
             //1 Play Menu
             case 1:
                 desiredMenuPosition = Vector3.right * 1920;
+
+                if (!GameManager.Instance.viewTutorial)
+                {
+                    buttonTutorial.SetActive(false);
+                }
+                else
+                {
+                    buttonTutorial.SetActive(true);
+                }
                 break;
             //2 Shop Menu
             case 2:
@@ -180,10 +174,6 @@ public class MenuScene : MonoBehaviour
             staminaPanel.SetActive(false);
         }
     }
-
-    
-
-    
 
     //buttons
 
@@ -251,20 +241,27 @@ public class MenuScene : MonoBehaviour
     private void OnLevelSelect(int currentIndex) // para despues
     {
         Debug.Log("Level" + currentIndex);
-        if(!viewTutorial)
+        if(!GameManager.Instance.viewTutorial)
         {
             Tutorial();
-            viewTutorial = true;
+            GameManager.Instance.viewTutorial = true;
+            PlayerData.Get().SaveGame();
         }
         else
         {
             if(GameManager.Instance.stamina >= 25)
             {
                 GameManager.Instance.stamina = GameManager.Instance.stamina - 25f;
+                staminaSystem.UpdateCurrentStamina();
                 PlayerData.Get().SaveGame();
-                staminaSystem.ResetData((int)GameManager.Instance.stamina);
-
-                SceneLevel("Motores2");
+                if(GameManager.Instance.level == 0)
+                {
+                    SceneLevel("Nivel1");
+                }
+                else if (GameManager.Instance.level == 1)
+                {
+                    SceneLevel("Nivel2");
+                }
             }
             else
             {
@@ -362,7 +359,7 @@ public class MenuScene : MonoBehaviour
         GameManager.Instance.currency = 200;
         GameManager.Instance.level = 0;
         GameManager.Instance.stamina = 50;
-        staminaSystem.ResetData(50);
+
         menuUI.RefreshData();
         PlayerData.Get().SaveGame();
         confirmationPanel.SetActive(false);

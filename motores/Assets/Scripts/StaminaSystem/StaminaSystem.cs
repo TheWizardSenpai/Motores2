@@ -16,7 +16,6 @@ public class StaminaSystem : MonoBehaviour
 
     bool recharging;
 
-    //[SerializeField] TextMeshProUGUI _staminaText = null;
     [SerializeField] TextMeshProUGUI _timerText = null;
 
     [SerializeField] string _titleNotif = "Full Stamina";
@@ -41,12 +40,6 @@ public class StaminaSystem : MonoBehaviour
         }
     }
 
-    public void ResetData(int c)
-    {
-        _currentStamina = c;
-        timer = _nextStaminaTime - DateTime.Now;        
-    }
-
     IEnumerator RechargeStamina()
     {
         UpdateTimer();
@@ -63,6 +56,7 @@ public class StaminaSystem : MonoBehaviour
             while (current > nexTime)
             {
                 if (_currentStamina >= _maxStamina) break;
+
                 _currentStamina += 1;
                 addingStamina = true;
 
@@ -95,8 +89,6 @@ public class StaminaSystem : MonoBehaviour
 
         recharging = false;
     }
-
-
 
     private DateTime AddDuration(DateTime timeToAdd, float timeToRecharge)
     {
@@ -134,9 +126,6 @@ public class StaminaSystem : MonoBehaviour
 
     private void UpdateStamina()
     {
-        //_staminaText.text = $"{_currentStamina}/{_maxStamina}";
-        //_staminaText.text = _currentStamina.ToString("");
-
         GameManager.Instance.stamina = _currentStamina;
         menuUI.RefreshData();
     }
@@ -149,21 +138,19 @@ public class StaminaSystem : MonoBehaviour
             return;
 
         }
-        //estructura que de un intervalo de tiempo 
+
         TimeSpan timer = _nextStaminaTime - DateTime.Now;
-
-        //formato ceros para representar horario como su fuese reloj
-
         _timerText.text = timer.Minutes.ToString("00") + ":" + timer.Seconds.ToString("00");
+    }
+
+    public void UpdateCurrentStamina()
+    {
+        _currentStamina = (int)GameManager.Instance.stamina;
     }
 
 
     void SaveInformation()
     {
-        //PlayerPrefs.SetInt(SaveData.currentStaminaKey, _currentStamina);
-        //PlayerPrefs.SetString(SaveData.nextStaminaTimeKey, _nextStaminaTime.ToString());
-        //PlayerPrefs.SetString(SaveData.lastStaminaTimeKey, _lastStaminaTime.ToString());
-
         GameManager.Instance.stamina = _currentStamina;
         GameManager.Instance.nextStamina = _nextStaminaTime.ToString();
         GameManager.Instance.lastStamina = _lastStaminaTime.ToString();
@@ -178,9 +165,6 @@ public class StaminaSystem : MonoBehaviour
         _currentStamina = (int)GameManager.Instance.stamina;
         _nextStaminaTime = StringToDateTime(GameManager.Instance.nextStamina);
         _lastStaminaTime = StringToDateTime(GameManager.Instance.lastStamina);
-
-        //_nextStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.nextStaminaTimeKey));
-        //_lastStaminaTime = StringToDateTime(PlayerPrefs.GetString(SaveData.lastStaminaTimeKey));
     }
 
     DateTime StringToDateTime(string date)
@@ -205,7 +189,4 @@ public class StaminaSystem : MonoBehaviour
     {
         SaveInformation();
     }
-
-
-
 }

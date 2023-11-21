@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 20b767358c7000d43a6ebf0e416e063b
   - enabled: 1
-    path: Assets/Scenes/Motores2.unity
+    path: Assets/Scenes/Nivel1.unity
     guid: 43537eedf1a291b40a8c00593e811bc5
   - enabled: 1
     path: Assets/Scenes/Nivel2.unity

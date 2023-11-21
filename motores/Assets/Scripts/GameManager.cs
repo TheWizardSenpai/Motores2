@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int level;
     public string nextStamina;
     public string lastStamina;
+    public bool viewTutorial;
 
     public bool isFirstTime = true;
 

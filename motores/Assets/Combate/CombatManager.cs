@@ -101,15 +101,22 @@ public class CombatManager : MonoBehaviour
                         if (fgtr.isAlive == false)
                         {
                             GameManager.Instance.sumarcoinst(30);
-                            GameManager.Instance.level++;
+                            if (GameManager.Instance.level < 1) // para que no vaya al level 3 ni 4 etc
+                            {
+                                GameManager.Instance.level++;
+                            }
                             PlayerData.Get().SaveGame();
                             LogPanel.Write("Victory!");
                             this.isCombatActive = false;
+                            //SceneManager.LoadScene(2);
+
                             // Obtener el índice de la escena actual
                             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
                             // Cargar la siguiente escena en orden
                             SceneManager.LoadScene(currentSceneIndex + 1);
+
+
                         }
 
                         if (playerTeam.isAlive == false)

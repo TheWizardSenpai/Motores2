@@ -36,6 +36,7 @@ public class PlayerData : MonoBehaviour
         saveData.level = GameManager.Instance.level;
         saveData.nextStamina = GameManager.Instance.nextStamina;
         saveData.lastStamina = GameManager.Instance.lastStamina;
+        saveData.viewTutorial = GameManager.Instance.viewTutorial;
 
         string json = JsonUtility.ToJson(saveData, true); //Crear el string a json                                                    
         PlayerPrefs.SetString("Data",json);
@@ -51,6 +52,7 @@ public class PlayerData : MonoBehaviour
         GameManager.Instance.level = data.level;
         GameManager.Instance.nextStamina= data.nextStamina;
         GameManager.Instance.lastStamina = data.lastStamina;
+        GameManager.Instance.viewTutorial = data.viewTutorial;
 
         Debug.Log("load: " + json);   
     }

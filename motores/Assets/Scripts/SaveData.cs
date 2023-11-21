@@ -7,4 +7,5 @@ public class SaveData
     public int level;
     public string nextStamina;
     public string lastStamina;
+    public bool viewTutorial;
 }

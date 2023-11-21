@@ -10,6 +10,7 @@ public class PotionsInGame : MonoBehaviour
 
     public GameObject[] potionPrefabs;
     public Transform potionsParent;
+    public PlayerFighter playerFighter;
 
     private void Start()
     {
@@ -43,6 +44,8 @@ public class PotionsInGame : MonoBehaviour
 
         int newQuantity = potion.Quantity;
         quantityText.text = newQuantity.ToString();
+
+        playerFighter.ExecuteSkill(2);
 
         if (newQuantity <= 0)
         {
