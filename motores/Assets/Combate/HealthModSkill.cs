@@ -26,13 +26,13 @@ public class HealthModSkill : Skill
         if (dice <= this.critChance)
         {
             amount *= 2f;
-            LogPanel.Write("Critical hit!");
-            LogPanel.Write("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
+            this.messages.Enqueue("Critical hit!");
+            this.messages.Enqueue("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
         }
 
         else
         {
-            LogPanel.Write("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
+            this.messages.Enqueue("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
         }
 
 
