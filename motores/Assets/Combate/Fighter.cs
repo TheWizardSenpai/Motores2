@@ -7,7 +7,7 @@ public abstract class Fighter : MonoBehaviour
 
     public CombatManager combatManager;
     public List<StatusMod> statusMods;
-    protected Stats stats;
+    public Stats stats;
 
     protected Skill[] skills;
 

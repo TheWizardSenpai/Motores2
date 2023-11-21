@@ -16,8 +16,8 @@ public class StatsManager : MonoBehaviour
     }
     void Update()
     {
-        //UpdateUI();
-        //Debug.Log("Figther" + fighter.stats.attack);
+        this.SetDefense(fighter.GetCurrentStats().deffense);
+        this.SetAttack(fighter.GetCurrentStats().attack);
     }
 
     public void UpdateUI()
