@@ -32,8 +32,8 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
     prefabIndex: 1
     maxHealth: 80
-    level: 25
-    attack: 40
+    level: 22
+    attack: 35
     deffense: 40
     spirit: 10
     speed: 10

@@ -387,9 +387,9 @@ MonoBehaviour:
   animationDuration: 2
   selfInflicted: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -40
+  amount: -70
   modType: 0
-  critChance: 0.3
+  critChance: 0
 --- !u!1 &152833960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,8 +3346,8 @@ MonoBehaviour:
   animationDuration: 2
   selfInflicted: 1
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: 20
-  modType: 0
+  amount: 15
+  modType: 1
   critChance: 0
 --- !u!1 &1839064882
 GameObject:
@@ -3610,7 +3610,7 @@ MonoBehaviour:
   effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
   amount: -50
   modType: 0
-  critChance: 0
+  critChance: 0.4
 --- !u!1 &2026483024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,6 +4152,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4099514982699909561, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514982764048887, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: m_Name
+      value: Robo de vida
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695817, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695817, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695819, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: m_Name
+      value: Furia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: message
+      value: Aumento su ataque en 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: skillName
+      value: Furia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: selfInflicted
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -4216,7 +4248,24 @@ PrefabInstance:
       propertyPath: combatManager
       value: 
       objectReference: {fileID: 1839064883}
-    m_RemovedComponents: []
+    - target: {fileID: 4099514983437881096, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: amount
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983437881096, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: skillName
+      value: Bola de fuego
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983437881096, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: critChance
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983437881098, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: m_Name
+      value: Bola de fuego
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4099514982764048885, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
 --- !u!1 &4099514983590494363 stripped
 GameObject:
@@ -4238,6 +4287,29 @@ MonoBehaviour:
   fighter: {fileID: 1891062845}
   actualDefense: {fileID: 1131949840}
   actualAttack: {fileID: 103224490}
+--- !u!1 &4099514983590494365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4099514982764048887, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+  m_PrefabInstance: {fileID: 4099514983590494362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4099514983590494366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099514983590494365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b28600c4a92de746ace2457331eb3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Robo de vida
+  animationDuration: 1
+  selfInflicted: 0
+  effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  lifeStealPercentage: 0.3
+  amount: 110
 --- !u!1 &4498609722750087685
 GameObject:
   m_ObjectHideFlags: 0
