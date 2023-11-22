@@ -4321,7 +4321,7 @@ MonoBehaviour:
   selfInflicted: 0
   effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
   lifeStealPercentage: 0.3
-  amount: 110
+  amount: 120
 --- !u!1 &4498609722750087685
 GameObject:
   m_ObjectHideFlags: 0
