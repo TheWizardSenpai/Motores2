@@ -120,7 +120,7 @@ public class CombatManager : MonoBehaviour
 
                         if (playerTeam.isAlive == false)
                         {
-                            SceneManager.LoadScene(3);
+                            SceneManager.LoadScene(4);
                         }
                     
                     else
