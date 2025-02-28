@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &28340444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28340445}
+  m_Layer: 0
+  m_Name: DamagePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28340445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28340444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.24, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891062844}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &70067007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidacion
+  skillName: Intimidar
   animationDuration: 1
   selfInflicted: 0
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
@@ -2396,7 +2427,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 5.0625
+  orthographic size: 4.15828
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3215,6 +3246,37 @@ MonoBehaviour:
   amount: 20
   modType: 0
   critChance: 0
+--- !u!1 &1834793331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834793332}
+  m_Layer: 0
+  m_Name: DamagePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1834793332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834793331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.45, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1839665924}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839064882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,6 +3362,7 @@ Transform:
   - {fileID: 1062732733}
   - {fileID: 1806767492}
   - {fileID: 126992390}
+  - {fileID: 1834793332}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3319,6 +3382,7 @@ MonoBehaviour:
   statusPanel: {fileID: 2033497753}
   combatManager: {fileID: 1839064883}
   statusMods: []
+  DamagePivot: {fileID: 0}
   skillPanel: {fileID: 1679369553}
 --- !u!114 &1839665926
 MonoBehaviour:
@@ -3586,6 +3650,7 @@ Transform:
   - {fileID: 259608465}
   - {fileID: 2030251922}
   - {fileID: 1534443812}
+  - {fileID: 28340445}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3605,6 +3670,7 @@ MonoBehaviour:
   statusPanel: {fileID: 1773362141}
   combatManager: {fileID: 1839064883}
   statusMods: []
+  DamagePivot: {fileID: 0}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!114 &1891062846
@@ -3681,7 +3747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ataque:'
+  m_text: 'Fuerza:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

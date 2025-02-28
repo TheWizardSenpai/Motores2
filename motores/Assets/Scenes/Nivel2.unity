@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ataque:'
+  m_text: 'Fuerza:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidacion
+  skillName: Intimidar
   animationDuration: 1
   selfInflicted: 0
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
@@ -2708,7 +2708,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.0625
+  orthographic size: 4.15828
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

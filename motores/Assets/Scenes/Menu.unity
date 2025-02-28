@@ -777,7 +777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -760.46, y: -93.284}
+  m_AnchoredPosition: {x: -760.45996, y: -93.284}
   m_SizeDelta: {x: -760.46, y: -265.544}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &59066922
@@ -3436,7 +3436,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 57.727833
+  orthographic size: 57.753887
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6325,7 +6325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -729.00006, y: -176.00006}
+  m_AnchoredPosition: {x: -782, y: -176.00006}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813629477
@@ -8422,7 +8422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -901.8501, y: -176.00006}
+  m_AnchoredPosition: {x: -782, y: -176.00006}
   m_SizeDelta: {x: 116.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156405660
@@ -8454,8 +8454,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

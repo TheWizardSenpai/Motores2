@@ -8,6 +8,8 @@ public abstract class Fighter : MonoBehaviour
     public CombatManager combatManager;
     public List<StatusMod> statusMods;
     public Stats stats;
+    [SerializeField]
+    public Transform DamagePivot;
 
     protected Skill[] skills;
 
