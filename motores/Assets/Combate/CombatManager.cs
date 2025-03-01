@@ -21,7 +21,6 @@ public class CombatManager : MonoBehaviour
     public Fighter[] fighters;
     [SerializeField]
     private int fighterIndex;
-
     public Fighter playerTeam;
     public Fighter enemyTeam;
     public int FighterIndex { get => fighterIndex; }
@@ -75,14 +74,13 @@ public class CombatManager : MonoBehaviour
                     // Wait for fighter skill animation
                     yield return new WaitForSeconds(currentFighterSkill.animationDuration);
                     this.combatStatus = CombatStatus.CHECK_ACTION_MESSAGES;
-
                     break;
                 case CombatStatus.CHECK_ACTION_MESSAGES:
                     string nextMessage = this.currentFighterSkill.GetNextMessage();
                     if (nextMessage != null)
                     {
                         LogPanel.Write(nextMessage);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(0.5f);
                     }
                     else
                     {
@@ -102,6 +100,7 @@ public class CombatManager : MonoBehaviour
                             GameManager.Instance.sumarcoinst(30);
                             if (GameManager.Instance.level < 1) // para que no vaya al level 3 ni 4 etc
                             {
+                                yield return new WaitForSeconds(2f);
                                 GameManager.Instance.level++;
                             }
                             PlayerData.Get().SaveGame();
@@ -131,7 +130,7 @@ public class CombatManager : MonoBehaviour
             yield return null;
                     break;
                 case CombatStatus.NEXT_TURN:
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.5f);
 
                     this.fighterIndex = (this.fighterIndex + 1) % this.fighters.Length;
                     var currentTurn = this.fighters[this.fighterIndex];

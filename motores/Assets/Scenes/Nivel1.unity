@@ -2427,7 +2427,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 4.15828
+  orthographic size: 4.197822
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3310,6 +3310,7 @@ MonoBehaviour:
   - {fileID: 1839665925}
   - {fileID: 1891062845}
   fighterIndex: -1
+  animator: {fileID: 1479260581}
   playerTeam: {fileID: 1839665925}
   enemyTeam: {fileID: 1891062845}
 --- !u!4 &1839064884
@@ -3382,7 +3383,8 @@ MonoBehaviour:
   statusPanel: {fileID: 2033497753}
   combatManager: {fileID: 1839064883}
   statusMods: []
-  DamagePivot: {fileID: 0}
+  animator: {fileID: 1479260581}
+  DamagePivot: {fileID: 1834793332}
   skillPanel: {fileID: 1679369553}
 --- !u!114 &1839665926
 MonoBehaviour:
@@ -3670,7 +3672,8 @@ MonoBehaviour:
   statusPanel: {fileID: 1773362141}
   combatManager: {fileID: 1839064883}
   statusMods: []
-  DamagePivot: {fileID: 0}
+  animator: {fileID: 1114140012}
+  DamagePivot: {fileID: 28340445}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!114 &1891062846

@@ -29,9 +29,11 @@ public class EnemyFighter : Fighter
     IEnumerator IA()
     {
         yield return new WaitForSeconds(1f);
-
+        animator.Play("Attack");
         Skill skill = this.skills[Random.Range(0, this.skills.Length)];
-
+        yield return new WaitForSeconds(0.5f);
+        animator.Play("IDLE");
+;
         skill.SetEmitterAndReceiver(
             this, this.combatManager.GetOpposingCharacter());
 
@@ -40,6 +42,7 @@ public class EnemyFighter : Fighter
 
     IEnumerator Death()
     {
+        animator.Play("Muelte");
         yield return new WaitForSeconds(1f);
 
 

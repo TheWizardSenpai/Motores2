@@ -8,8 +8,10 @@ public abstract class Fighter : MonoBehaviour
     public CombatManager combatManager;
     public List<StatusMod> statusMods;
     public Stats stats;
+    public Animator animator;
     [SerializeField]
     public Transform DamagePivot;
+
 
     protected Skill[] skills;
 
@@ -29,11 +31,18 @@ public abstract class Fighter : MonoBehaviour
     {
         this.statusPanel.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
+
+        if (this.isAlive == false)
+        {
+            animator.Play("Muelte");
+            Invoke("Die", 2f);
+        }
     }
     
 
     public void ModifyHealth(float amount)
     {
+
         this.stats.health = Mathf.Clamp(this.stats.health + amount, 0f, this.stats.maxHealth);
         this.stats.health = Mathf.Round(this.stats.health);
         this.statusPanel.SetHealth(this.stats.health, this.stats.maxHealth);
