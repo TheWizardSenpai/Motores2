@@ -372,9 +372,10 @@ MonoBehaviour:
   statusPanel: {fileID: 0}
   combatManager: {fileID: 0}
   statusMods: []
+  animator: {fileID: 4099514982547713526}
   DamagePivot: {fileID: 5656168737497771518}
   EnemyIndex: 0
-  EnemyDateBase: {fileID: 0}
+  EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!1 &4099514983437881098
 GameObject:
   m_ObjectHideFlags: 0

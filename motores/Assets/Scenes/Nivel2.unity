@@ -2708,7 +2708,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.15828
+  orthographic size: 4.197822
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3453,6 +3453,8 @@ MonoBehaviour:
   statusPanel: {fileID: 2033497753}
   combatManager: {fileID: 1839064883}
   statusMods: []
+  animator: {fileID: 1479260581}
+  DamagePivot: {fileID: 1839665924}
   skillPanel: {fileID: 1679369553}
 --- !u!114 &1839665926
 MonoBehaviour:

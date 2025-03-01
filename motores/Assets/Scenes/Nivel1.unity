@@ -234,57 +234,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70067007}
   m_CullTransparentMesh: 1
---- !u!1 &126992389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126992390}
-  - component: {fileID: 126992391}
-  m_Layer: 0
-  m_Name: Rompe huesos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &126992390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126992389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 427.31705, y: 432.69644, z: -0.09384908}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126992391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126992389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Rompe huesos
-  animationDuration: 2
-  selfInflicted: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -40
-  modType: 0
-  critChance: 0.3
 --- !u!1 &152833960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +956,7 @@ GameObject:
   - component: {fileID: 259608465}
   - component: {fileID: 259608466}
   m_Layer: 0
-  m_Name: Furia Dragon
+  m_Name: Misil Magico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1040,10 +989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Furia Dragon
+  skillName: Misil Magico
   animationDuration: 2
   selfInflicted: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 1545806602296978, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
   amount: -50
   modType: 0
   critChance: 0
@@ -1801,70 +1750,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044702749}
   m_CullTransparentMesh: 1
---- !u!1 &1062732732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1062732733}
-  - component: {fileID: 1062732735}
-  - component: {fileID: 1062732734}
-  m_Layer: 0
-  m_Name: Intimidacion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1062732733
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062732732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 427.31705, y: 432.69644, z: -0.09384908}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1062732734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062732732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d47ff11f69dff448b8bc3ad15aeb61b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  amount: -10
---- !u!114 &1062732735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062732732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Intimidar
-  animationDuration: 1
-  selfInflicted: 0
-  effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-  message: Bajo la defensa del rival en 10!
 --- !u!1 &1114140010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2444,7 @@ GameObject:
   - component: {fileID: 1464299886}
   - component: {fileID: 1464299887}
   m_Layer: 0
-  m_Name: Rompe huesos
+  m_Name: Tortura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2592,118 +2477,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
+  skillName: Tortura
   animationDuration: 2
   selfInflicted: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   amount: -40
   modType: 0
   critChance: 0.3
---- !u!1 &1479260580
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1479260583}
-  - component: {fileID: 1479260582}
-  - component: {fileID: 1479260581}
-  m_Layer: 0
-  m_Name: Idle_0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1479260581
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479260580}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed82d10de6cac5946910b0656c2223ca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &1479260582
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479260580}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -1077906411, guid: 0520bf5be43f99a4b8758803c094517e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.3125, y: 3.25}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1479260583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479260580}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0.92, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534443811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2495,7 @@ GameObject:
   - component: {fileID: 1534443812}
   - component: {fileID: 1534443813}
   m_Layer: 0
-  m_Name: Curacion
+  m_Name: Recuperacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2748,10 +2528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Curacion
+  skillName: Recuperacion
   animationDuration: 2
   selfInflicted: 1
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
   amount: 20
   modType: 0
   critChance: 0
@@ -3195,88 +2975,6 @@ MonoBehaviour:
   levelLabel: {fileID: 2398504902524990465}
   healthBar: {fileID: 1690001842951941690}
   healthLabel: {fileID: 8357149654575378946}
---- !u!1 &1806767491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1806767492}
-  - component: {fileID: 1806767493}
-  m_Layer: 0
-  m_Name: Curacion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1806767492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806767491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 427.31705, y: 432.69644, z: -0.09384908}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1806767493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806767491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Curacion
-  animationDuration: 2
-  selfInflicted: 1
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: 20
-  modType: 0
-  critChance: 0
---- !u!1 &1834793331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1834793332}
-  m_Layer: 0
-  m_Name: DamagePivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1834793332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834793331}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839064882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,79 +3025,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1839665923
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839665924}
-  - component: {fileID: 1839665925}
-  - component: {fileID: 1839665926}
-  m_Layer: 0
-  m_Name: Personaje
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1839665924
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839665923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.317043, y: -2.41, z: 0.09384908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1479260583}
-  - {fileID: 1968424790}
-  - {fileID: 1062732733}
-  - {fileID: 1806767492}
-  - {fileID: 126992390}
-  - {fileID: 1834793332}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1839665925
+--- !u!114 &1839665925 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+  m_PrefabInstance: {fileID: 5160316684837063762}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839665923}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f963ce67d26b3284689e20c4eac0aabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idName: Samurai
-  statusPanel: {fileID: 2033497753}
-  combatManager: {fileID: 1839064883}
-  statusMods: []
-  animator: {fileID: 1479260581}
-  DamagePivot: {fileID: 1834793332}
-  skillPanel: {fileID: 1679369553}
---- !u!114 &1839665926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839665923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a65e4a8968f178147a79ca82184379e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fighter: {fileID: 1839665925}
-  actualDefense: {fileID: 1853656643}
-  actualAttack: {fileID: 1899071669}
 --- !u!1 &1853656641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,57 +3598,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929524143}
   m_CullTransparentMesh: 1
---- !u!1 &1968424789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1968424790}
-  - component: {fileID: 1968424791}
-  m_Layer: 0
-  m_Name: Furia Dragon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1968424790
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968424789}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 427.31705, y: 432.69644, z: -0.09384908}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1839665924}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1968424791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968424789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillName: Furia Dragon
-  animationDuration: 2
-  selfInflicted: 0
-  effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  amount: -50
-  modType: 0
-  critChance: 1
 --- !u!1 &2026483024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,7 +3688,7 @@ GameObject:
   - component: {fileID: 2030251924}
   - component: {fileID: 2030251923}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Miedo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4150,10 +3735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidacion
+  skillName: Miedo
   animationDuration: 1
   selfInflicted: 0
-  effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
+  effectPrfb: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
   message: Bajo la defensa del rival en 10!
 --- !u!1 &2033497751
 GameObject:
@@ -4674,6 +4259,83 @@ RectTransform:
   m_AnchoredPosition: {x: -150, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
+--- !u!1001 &5160316684837063762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5160316685598269265, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_Name
+      value: Personaje
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269268, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: actualAttack
+      value: 
+      objectReference: {fileID: 1899071669}
+    - target: {fileID: 5160316685598269268, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: actualDefense
+      value: 
+      objectReference: {fileID: 1853656643}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.317043
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09384908
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: skillPanel
+      value: 
+      objectReference: {fileID: 1679369553}
+    - target: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: statusPanel
+      value: 
+      objectReference: {fileID: 2033497753}
+    - target: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 1839064883}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
 --- !u!114 &6888496912120706927
 MonoBehaviour:
   m_ObjectHideFlags: 0
