@@ -4266,6 +4266,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5160316685563795927, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: effectPrfb
+      value: 
+      objectReference: {fileID: 100004, guid: 3af6f68141914ca43ba39b2403757bd0, type: 3}
     - target: {fileID: 5160316685598269265, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: m_Name
       value: Personaje
