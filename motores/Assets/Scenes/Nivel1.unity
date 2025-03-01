@@ -3310,7 +3310,6 @@ MonoBehaviour:
   - {fileID: 1839665925}
   - {fileID: 1891062845}
   fighterIndex: -1
-  animator: {fileID: 1479260581}
   playerTeam: {fileID: 1839665925}
   enemyTeam: {fileID: 1891062845}
 --- !u!4 &1839064884
@@ -4010,7 +4009,7 @@ MonoBehaviour:
   skillName: Furia Dragon
   animationDuration: 2
   selfInflicted: 0
-  effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   amount: -50
   modType: 0
   critChance: 1
