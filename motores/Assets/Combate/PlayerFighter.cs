@@ -38,4 +38,10 @@ public class PlayerFighter : Fighter
     {
         animator.Play("IDLE"); // Cambia la animación a Idle
     }
+
+    public void SetCharacterSpriteFromDatabase(Character character)
+    {
+        this.idName = character.characterName;
+        SetCharacterSprite(character.characterSprite); // Llama al método SetCharacterSprite en Fighter
+    }
 }

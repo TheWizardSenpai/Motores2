@@ -34,25 +34,47 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
-        gameManagerInstance = GameObject.FindObjectOfType<GameManager>(); // Encuentra la instancia existente del GameManager en la escena
+        gameManagerInstance = GameObject.FindObjectOfType<GameManager>();
 
         if (gameManagerInstance == null)
         {
             Debug.LogError("No se encontró el objeto GameManager en la escena.");
             return;
         }
+
+        // Obtener el índice del personaje seleccionado guardado en PlayerPrefs
+        int selectedCharacterIndex = PlayerPrefs.GetInt("selectedOption", 0);
+
+        // Cargar el CharacterDatabase (asegúrate de tener el asset en Resources)
+        CharacterDatabase characterDB = Resources.Load<CharacterDatabase>("CharacterDatabase");
+
+        if (characterDB == null)
+        {
+            Debug.LogError("No se encontró CharacterDatabase en Resources.");
+            return;
+        }
+
+        // Obtener el Character seleccionado
+        Character selectedCharacter = characterDB.GetCharacter(selectedCharacterIndex);
+
+        // Asignar el sprite y nombre al jugador (playerTeam)
+        if (playerTeam is PlayerFighter playerFighter)
+        {
+            playerFighter.SetCharacterSpriteFromDatabase(selectedCharacter);
+        }
+        else
+        {
+            Debug.LogError("playerTeam no es una instancia de PlayerFighter.");
+        }
+
         LogPanel.Write("Battle initiated.");
 
         this.combatStatus = CombatStatus.NEXT_TURN;
-
         this.fighterIndex = -1;
-
         this.isCombatActive = true;
-
 
         StartCoroutine(this.CombatLoop());
     }
-
     IEnumerator CombatLoop()
     {
         while (this.isCombatActive)
@@ -92,7 +114,7 @@ public class CombatManager : MonoBehaviour
                     break;
 
                 case CombatStatus.CHECK_FOR_VICTORY:
-                    
+
                     foreach (var fgtr in this.fighters)
                     {
                         if (fgtr.isAlive == false)
@@ -121,13 +143,13 @@ public class CombatManager : MonoBehaviour
                         {
                             SceneManager.LoadScene(4);
                         }
-                    
-                    else
-                    {
-                        this.combatStatus = CombatStatus.NEXT_TURN;
+
+                        else
+                        {
+                            this.combatStatus = CombatStatus.NEXT_TURN;
+                        }
                     }
-            }
-            yield return null;
+                    yield return null;
                     break;
                 case CombatStatus.NEXT_TURN:
                     yield return new WaitForSeconds(0.5f);
@@ -137,11 +159,11 @@ public class CombatManager : MonoBehaviour
 
                     LogPanel.Write($"{currentTurn.idName} has the turn.");
                     currentTurn.InitTurn();
-                    
+
                     this.combatStatus = CombatStatus.WAITING_FOR_FIGHTER;
 
                     break;
-                    
+
             }
         }
     }

@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 public abstract class Fighter : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer; // Asignar el SpriteRenderer en el Inspector
     public string idName;
     public StatusPanel statusPanel;
 
@@ -12,9 +14,7 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField]
     public Transform DamagePivot;
 
-
     protected Skill[] skills;
-
 
     public bool isAlive
     {
@@ -23,10 +23,21 @@ public abstract class Fighter : MonoBehaviour
 
     protected virtual void Start()
     {
+        // Asegurarse de que el spriteRenderer esté asignado
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError("SpriteRenderer no asignado en " + this.name);
+            }
+        }
+
         this.statusPanel.SetStats(this.idName, this.stats);
         this.skills = this.GetComponentsInChildren<Skill>();
         this.statusMods = new List<StatusMod>();
     }
+
     protected void Die()
     {
         this.statusPanel.gameObject.SetActive(false);
@@ -38,11 +49,9 @@ public abstract class Fighter : MonoBehaviour
             Invoke("Die", 2f);
         }
     }
-    
 
     public void ModifyHealth(float amount)
     {
-
         this.stats.health = Mathf.Clamp(this.stats.health + amount, 0f, this.stats.maxHealth);
         this.stats.health = Mathf.Round(this.stats.health);
         this.statusPanel.SetHealth(this.stats.health, this.stats.maxHealth);
@@ -51,7 +60,6 @@ public abstract class Fighter : MonoBehaviour
         {
             Invoke("Die", 2f);
         }
-        
     }
 
     public Stats GetCurrentStats()
@@ -66,6 +74,17 @@ public abstract class Fighter : MonoBehaviour
         return modedStats;
     }
 
+    public void SetCharacterSprite(Sprite characterSprite)
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sprite = characterSprite;
+        }
+        else
+        {
+            Debug.LogError("SpriteRenderer no asignado en " + this.name);
+        }
+    }
 
     public abstract void InitTurn();
 }
