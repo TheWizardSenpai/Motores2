@@ -23,19 +23,44 @@ public abstract class Fighter : MonoBehaviour
 
     protected virtual void Start()
     {
-        // Asegurarse de que el spriteRenderer esté asignado
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            if (spriteRenderer == null)
-            {
-                Debug.LogError("SpriteRenderer no asignado en " + this.name);
-            }
         }
 
         this.statusPanel.SetStats(this.idName, this.stats);
         this.skills = this.GetComponentsInChildren<Skill>();
         this.statusMods = new List<StatusMod>();
+    }
+
+    // Aquí es donde agregas el método para asignar el sprite desde los objetos desactivados
+    public void SetCharacterSpriteFromDatabase(Character character)
+    {
+        // Buscar el prefab desde la base de datos de personajes
+        GameObject spriteObject = Instantiate(character.characterPrefab);  // Instanciamos el prefab
+
+        if (spriteObject != null)
+        {
+            // Activamos el objeto con el sprite
+            spriteObject.SetActive(true);
+
+            // Obtener el SpriteRenderer del objeto
+            SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer != null)
+            {
+                // Asignamos el sprite al SpriteRenderer del personaje
+                this.spriteRenderer.sprite = spriteRenderer.sprite;
+            }
+            else
+            {
+                Debug.LogError("No se encontró el SpriteRenderer para el personaje: " + character.characterName);
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontró el GameObject para el personaje: " + character.characterName);
+        }
     }
 
     protected void Die()
@@ -76,6 +101,8 @@ public abstract class Fighter : MonoBehaviour
 
     public void SetCharacterSprite(Sprite characterSprite)
     {
+        Debug.Log("SetCharacterSprite ejecutado con sprite: " + characterSprite.name);
+
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = characterSprite;
@@ -84,6 +111,10 @@ public abstract class Fighter : MonoBehaviour
         {
             Debug.LogError("SpriteRenderer no asignado en " + this.name);
         }
+    }
+    public SpriteRenderer GetSpriteRenderer()
+    {
+        return spriteRenderer;
     }
 
     public abstract void InitTurn();

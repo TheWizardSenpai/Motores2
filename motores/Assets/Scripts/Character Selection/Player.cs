@@ -24,7 +24,20 @@ public class Player : MonoBehaviour
     private void UpdateCharacter(int selectedOption)
     {
         Character character = characterDB.GetCharacter(selectedOption);
-        artworkSprite.sprite = character.characterSprite;
+
+        // Aquí accedes al prefab y obtienes el SpriteRenderer de ese prefab
+        SpriteRenderer prefabSpriteRenderer = character.characterPrefab.GetComponent<SpriteRenderer>();
+
+        if (prefabSpriteRenderer != null)
+        {
+            artworkSprite.sprite = prefabSpriteRenderer.sprite;
+        }
+        else
+        {
+            Debug.LogError("No se encontró el SpriteRenderer en el prefab del personaje: " + character.characterName);
+        }
+
+
     }
 
     private void Load()

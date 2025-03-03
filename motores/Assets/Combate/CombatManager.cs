@@ -15,8 +15,7 @@ public enum CombatStatus
 
 public class CombatManager : MonoBehaviour
 {
-    private GameManager gameManagerInstance; // Variable para almacenar la instancia del GameManager
-
+    private GameManager gameManagerInstance;
 
     public Fighter[] fighters;
     [SerializeField]
@@ -31,7 +30,6 @@ public class CombatManager : MonoBehaviour
 
     private Skill currentFighterSkill;
 
-
     void Start()
     {
         gameManagerInstance = GameObject.FindObjectOfType<GameManager>();
@@ -42,10 +40,8 @@ public class CombatManager : MonoBehaviour
             return;
         }
 
-        // Obtener el índice del personaje seleccionado guardado en PlayerPrefs
         int selectedCharacterIndex = PlayerPrefs.GetInt("selectedOption", 0);
 
-        // Cargar el CharacterDatabase (asegúrate de tener el asset en Resources)
         CharacterDatabase characterDB = Resources.Load<CharacterDatabase>("CharacterDatabase");
 
         if (characterDB == null)
@@ -54,13 +50,11 @@ public class CombatManager : MonoBehaviour
             return;
         }
 
-        // Obtener el Character seleccionado
         Character selectedCharacter = characterDB.GetCharacter(selectedCharacterIndex);
 
-        // Asignar el sprite y nombre al jugador (playerTeam)
         if (playerTeam is PlayerFighter playerFighter)
         {
-            playerFighter.SetCharacterSpriteFromDatabase(selectedCharacter);
+            playerFighter.SetCharacterSpriteFromDatabase(selectedCharacter);  // Aquí se asigna el sprite y prefab
         }
         else
         {
@@ -68,13 +62,13 @@ public class CombatManager : MonoBehaviour
         }
 
         LogPanel.Write("Battle initiated.");
-
         this.combatStatus = CombatStatus.NEXT_TURN;
         this.fighterIndex = -1;
         this.isCombatActive = true;
-
         StartCoroutine(this.CombatLoop());
     }
+
+
     IEnumerator CombatLoop()
     {
         while (this.isCombatActive)
@@ -90,10 +84,8 @@ public class CombatManager : MonoBehaviour
 
                     yield return null;
 
-                    // Executing fighter skill
                     currentFighterSkill.Run();
 
-                    // Wait for fighter skill animation
                     yield return new WaitForSeconds(currentFighterSkill.animationDuration);
                     this.combatStatus = CombatStatus.CHECK_ACTION_MESSAGES;
                     break;
@@ -120,7 +112,7 @@ public class CombatManager : MonoBehaviour
                         if (fgtr.isAlive == false)
                         {
                             GameManager.Instance.sumarcoinst(30);
-                            if (GameManager.Instance.level < 1) // para que no vaya al level 3 ni 4 etc
+                            if (GameManager.Instance.level < 1)
                             {
                                 yield return new WaitForSeconds(2f);
                                 GameManager.Instance.level++;
@@ -128,15 +120,10 @@ public class CombatManager : MonoBehaviour
                             PlayerData.Get().SaveGame();
                             LogPanel.Write("Victory!");
                             this.isCombatActive = false;
-                            //SceneManager.LoadScene(2);
 
-                            // Obtener el índice de la escena actual
                             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-                            // Cargar la siguiente escena en orden
                             SceneManager.LoadScene(currentSceneIndex + 1);
-
-
                         }
 
                         if (playerTeam.isAlive == false)
@@ -163,7 +150,6 @@ public class CombatManager : MonoBehaviour
                     this.combatStatus = CombatStatus.WAITING_FOR_FIGHTER;
 
                     break;
-
             }
         }
     }
@@ -180,7 +166,6 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-
     public void OnFighterSkill(Skill skill)
     {
         this.currentFighterSkill = skill;
@@ -189,7 +174,6 @@ public class CombatManager : MonoBehaviour
 
     public void OnFighterDead()
     {
-        //Debug.Log("Muerto");
         this.combatStatus = CombatStatus.SKIP_TURN;
     }
 }

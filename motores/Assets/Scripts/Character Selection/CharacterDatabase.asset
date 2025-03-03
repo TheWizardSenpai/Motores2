@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99517d5d6d835e49998fd224fdde3dc, type: 3}
   m_Name: CharacterDatabase
   m_EditorClassIdentifier: 
-  character:
-  - characterName: maga
-    characterSprite: {fileID: 21300000, guid: cf47a52fb1f6c184babab9528c4a3d73, type: 3}
+  characters:
   - characterName: slime
-    characterSprite: {fileID: 21300000, guid: f5cf74d10af49604ebe9fe11dd095be2, type: 3}
+    characterPrefab: {fileID: 7256208034092070097, guid: 88f14b4c79ab5ce4ba9e42147ffa3523, type: 3}
+  - characterName: maga
+    characterPrefab: {fileID: 3508650729966079481, guid: 315243fef34303f4e8c6370d4bc7fd31, type: 3}
+  characterSprites: []

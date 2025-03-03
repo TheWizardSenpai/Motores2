@@ -54,8 +54,13 @@ public class CharacterManager : MonoBehaviour
     private void UpdateCharacter(int selectedOption)
     {
         Character character = characterDB.GetCharacter(selectedOption);
-        artworkSprite.sprite = character.characterSprite;
-        nameText.text = character.characterName;
+        // Si necesitas instanciar el prefab en la escena
+        GameObject characterInstance = Instantiate(character.characterPrefab, transform.position, Quaternion.identity);
+
+        // Si simplemente necesitas obtener el SpriteRenderer del prefab:
+        SpriteRenderer spriteRenderer = character.characterPrefab.GetComponent<SpriteRenderer>();
+        artworkSprite.sprite = spriteRenderer.sprite;
+
     }
 
     private void Load()

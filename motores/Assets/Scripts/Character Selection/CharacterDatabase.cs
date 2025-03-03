@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
 
+[CreateAssetMenu(fileName = "CharacterDatabase", menuName = "Character Database", order = 1)]
 public class CharacterDatabase : ScriptableObject
 {
-    public Character[] character;
+    public Character[] characters;  // Aquí van los prefabs
+    public Character[] characterSprites;  // Aquí van los sprites
 
     public int CharacterCount
     {
         get
         {
-            return character.Length;
+            return characters.Length;
         }
     }
 
     public Character GetCharacter(int index)
     {
-        return character[index];
+        return characters[index];
     }
 
+    public Character GetCharacterSprite(int index)
+    {
+        return characterSprites[index];
+    }
 }

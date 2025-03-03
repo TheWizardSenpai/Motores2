@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9179be8b636d1464699923441320bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDB: {fileID: 11400000, guid: 2133b7c01fdf513468cc95c678326797, type: 2}
+  characterDB: {fileID: 11400000, guid: 149e2265a3878614e824f1dd6828459a, type: 2}
   nameText: {fileID: 1543749471}
   artworkSprite: {fileID: 1592797480}
 --- !u!1 &1894386138
