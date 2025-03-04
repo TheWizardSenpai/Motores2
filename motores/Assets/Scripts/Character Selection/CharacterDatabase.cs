@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterDatabase : ScriptableObject
 {
     public Character[] characters;  // Aquí van los prefabs
-    public Character[] characterSprites;  // Aquí van los sprites
 
     public int CharacterCount
     {
@@ -20,9 +19,5 @@ public class CharacterDatabase : ScriptableObject
     {
         return characters[index];
     }
-
-    public Character GetCharacterSprite(int index)
-    {
-        return characterSprites[index];
-    }
 }
+

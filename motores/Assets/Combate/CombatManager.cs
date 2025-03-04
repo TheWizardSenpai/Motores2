@@ -41,7 +41,6 @@ public class CombatManager : MonoBehaviour
         }
 
         int selectedCharacterIndex = PlayerPrefs.GetInt("selectedOption", 0);
-
         CharacterDatabase characterDB = Resources.Load<CharacterDatabase>("CharacterDatabase");
 
         if (characterDB == null)
@@ -52,13 +51,23 @@ public class CombatManager : MonoBehaviour
 
         Character selectedCharacter = characterDB.GetCharacter(selectedCharacterIndex);
 
-        if (playerTeam is PlayerFighter playerFighter)
+        if (selectedCharacter.characterPrefab == null)
         {
-            playerFighter.SetCharacterSpriteFromDatabase(selectedCharacter);  // Aquí se asigna el sprite y prefab
+            Debug.LogError("El prefab del personaje no está asignado en el CharacterDatabase.");
+            return;
         }
-        else
+
+        // ?? Instanciar el prefab del personaje en combate
+        GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, transform.position, Quaternion.identity);
+        playerCharacterInstance.SetActive(true); // ? Activar el prefab después de instanciarlo
+
+        // ?? Asignar la referencia del prefab instanciado a playerTeam
+        playerTeam = playerCharacterInstance.GetComponent<PlayerFighter>();
+
+        if (playerTeam == null)
         {
-            Debug.LogError("playerTeam no es una instancia de PlayerFighter.");
+            Debug.LogError("El prefab instanciado no tiene un componente PlayerFighter.");
+            return;
         }
 
         LogPanel.Write("Battle initiated.");
@@ -67,6 +76,8 @@ public class CombatManager : MonoBehaviour
         this.isCombatActive = true;
         StartCoroutine(this.CombatLoop());
     }
+
+
 
 
     IEnumerator CombatLoop()

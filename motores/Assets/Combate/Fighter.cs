@@ -34,34 +34,27 @@ public abstract class Fighter : MonoBehaviour
     }
 
     // Aquí es donde agregas el método para asignar el sprite desde los objetos desactivados
-    public void SetCharacterSpriteFromDatabase(Character character)
+    public virtual void SetCharacterPrefabFromDatabase(Character character)
     {
-        // Buscar el prefab desde la base de datos de personajes
-        GameObject spriteObject = Instantiate(character.characterPrefab);  // Instanciamos el prefab
+        // Instanciamos el prefab
+        GameObject characterInstance = Instantiate(character.characterPrefab);
 
-        if (spriteObject != null)
+        // Asignamos el spriteRenderer del prefab al spriteRenderer del personaje
+        SpriteRenderer prefabSpriteRenderer = characterInstance.GetComponentInChildren<SpriteRenderer>();
+
+        if (prefabSpriteRenderer != null)
         {
-            // Activamos el objeto con el sprite
-            spriteObject.SetActive(true);
-
-            // Obtener el SpriteRenderer del objeto
-            SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
-
-            if (spriteRenderer != null)
-            {
-                // Asignamos el sprite al SpriteRenderer del personaje
-                this.spriteRenderer.sprite = spriteRenderer.sprite;
-            }
-            else
-            {
-                Debug.LogError("No se encontró el SpriteRenderer para el personaje: " + character.characterName);
-            }
+            this.spriteRenderer.sprite = prefabSpriteRenderer.sprite;
         }
         else
         {
-            Debug.LogError("No se encontró el GameObject para el personaje: " + character.characterName);
+            Debug.LogError("No se encontró SpriteRenderer en el prefab del personaje: " + character.characterName);
         }
+
+        // Opcional: Destruir la instancia del prefab si solo necesitas el sprite
+        Destroy(characterInstance);
     }
+
 
     protected void Die()
     {

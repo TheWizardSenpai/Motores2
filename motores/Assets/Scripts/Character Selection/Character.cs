@@ -6,5 +6,5 @@ using UnityEngine;
 public class Character
 {
     public string characterName;
-    public GameObject characterPrefab; // Aquí va la referencia al prefab
+    public GameObject characterPrefab;  // Contendrá el prefab completo (incluyendo el Sprite)
 }
