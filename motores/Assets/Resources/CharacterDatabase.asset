@@ -17,3 +17,7 @@ MonoBehaviour:
     characterPrefab: {fileID: 7256208034092070097, guid: 88f14b4c79ab5ce4ba9e42147ffa3523, type: 3}
   - characterName: maga
     characterPrefab: {fileID: 3508650729966079481, guid: 315243fef34303f4e8c6370d4bc7fd31, type: 3}
+  - characterName: samurai
+    characterPrefab: {fileID: 8506440569128047920, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
+  - characterName: rey
+    characterPrefab: {fileID: 647374135592699279, guid: 6f79e3ecb6c300a4ab4c5ceeaa06b6f5, type: 3}

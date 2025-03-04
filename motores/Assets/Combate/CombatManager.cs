@@ -49,6 +49,8 @@ public class CombatManager : MonoBehaviour
             return;
         }
 
+        GameObject personajePosition = GameObject.Find("Personaje");
+
         Character selectedCharacter = characterDB.GetCharacter(selectedCharacterIndex);
 
         if (selectedCharacter.characterPrefab == null)
@@ -57,12 +59,13 @@ public class CombatManager : MonoBehaviour
             return;
         }
 
+        GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, personajePosition.transform.position, personajePosition.transform.rotation);
+
         // ?? Instanciar el prefab del personaje en combate
-        GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, transform.position, Quaternion.identity);
+        //GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, transform.position, Quaternion.identity);
         playerCharacterInstance.SetActive(true); // ? Activar el prefab después de instanciarlo
 
-        // ?? Asignar la referencia del prefab instanciado a playerTeam
-        playerTeam = playerCharacterInstance.GetComponent<PlayerFighter>();
+        // ?? Asignar la referencia del prefab instanciado a playerTear
 
         if (playerTeam == null)
         {
