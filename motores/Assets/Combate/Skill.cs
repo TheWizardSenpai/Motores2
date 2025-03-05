@@ -4,58 +4,67 @@ using System.Collections.Generic;
 public abstract class Skill : MonoBehaviour
 {
     [Header("Base Skill")]
-    //Nombre de la habilidad
     public string skillName;
-    //Duracion de la animacion
     public float animationDuration;
-    //Si es autoinfligida o no
-    public bool selfInflicted;
-    //PreFab para la animacion
+
+    public SkillTargeting targeting;
+
     public GameObject effectPrfb;
-    //Quien la recibe y quien emite la habilidad
+
     protected Fighter emitter;
-    protected Fighter receiver;
+    protected List<Fighter> receivers;
+
     protected Queue<string> messages;
+
+    public bool needsManualTargeting
+    {
+        get
+        {
+            switch (this.targeting)
+            {
+                case SkillTargeting.SINGLE_ALLY:
+                case SkillTargeting.SINGLE_OPPONENT:
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+    }
 
     void Awake()
     {
         this.messages = new Queue<string>();
-
+        this.receivers = new List<Fighter>();
     }
 
-    private void Animate()
+    private void Animate(Fighter receiver)
     {
-        if (this.effectPrfb)
-            InstantatioEffect();
-        //else
-        //    Debug.Log("NO  EFECTO!");
-
-    }
-
-    private void InstantatioEffect()
-    {
-        //Debug.Log("EFECTO!");
-        var go = Instantiate(this.effectPrfb, this.receiver.DamagePivot.position, Quaternion.identity);
+        var go = Instantiate(this.effectPrfb, receiver.transform.position, Quaternion.identity);
         Destroy(go, this.animationDuration);
     }
 
     public void Run()
     {
-        if (this.selfInflicted)
+        foreach (var receiver in this.receivers)
         {
-            this.receiver = this.emitter;
+            this.Animate(receiver);
+            this.OnRun(receiver);
         }
 
-        this.Animate();
-
-        this.OnRun();
+        this.receivers.Clear();
     }
 
-    public void SetEmitterAndReceiver(Fighter _emitter, Fighter _receiver)
+    public void SetEmitter(Fighter _emitter)
     {
         this.emitter = _emitter;
-        this.receiver = _receiver;
     }
+
+    public void AddReceiver(Fighter _receiver)
+    {
+        this.receivers.Add(_receiver);
+    }
+
     public string GetNextMessage()
     {
         if (this.messages.Count != 0)
@@ -64,5 +73,5 @@ public abstract class Skill : MonoBehaviour
             return null;
     }
 
-    protected abstract void OnRun();
+    protected abstract void OnRun(Fighter receiver);
 }

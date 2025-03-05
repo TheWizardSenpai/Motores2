@@ -3,18 +3,20 @@ using System.Collections.Generic;
 
 public abstract class Fighter : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer; // Asignar el SpriteRenderer en el Inspector
+    public Team team;
+
     public string idName;
     public StatusPanel statusPanel;
 
     public CombatManager combatManager;
+
     public List<StatusMod> statusMods;
-    public Stats stats;
-    public Animator animator;
-    [SerializeField]
-    public Transform DamagePivot;
+
+    protected Stats stats;
 
     protected Skill[] skills;
+
+    public StatusCondition statusCondition;
 
     public bool isAlive
     {
@@ -23,60 +25,78 @@ public abstract class Fighter : MonoBehaviour
 
     protected virtual void Start()
     {
-        if (spriteRenderer == null)
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
         this.statusPanel.SetStats(this.idName, this.stats);
         this.skills = this.GetComponentsInChildren<Skill>();
+
         this.statusMods = new List<StatusMod>();
     }
 
-    // Aquí es donde agregas el método para asignar el sprite desde los objetos desactivados
-    public virtual void SetCharacterPrefabFromDatabase(Character character)
+    protected void AutoConfigureSkillTargeting(Skill skill)
     {
-        // Instanciamos el prefab
-        GameObject characterInstance = Instantiate(character.characterPrefab);
+        skill.SetEmitter(this);
 
-        // Asignamos el spriteRenderer del prefab al spriteRenderer del personaje
-        SpriteRenderer prefabSpriteRenderer = characterInstance.GetComponentInChildren<SpriteRenderer>();
-
-        if (prefabSpriteRenderer != null)
+        switch (skill.targeting)
         {
-            this.spriteRenderer.sprite = prefabSpriteRenderer.sprite;
-        }
-        else
-        {
-            Debug.LogError("No se encontró SpriteRenderer en el prefab del personaje: " + character.characterName);
-        }
+            case SkillTargeting.AUTO:
+                skill.AddReceiver(this);
+                break;
+            case SkillTargeting.ALL_ALLIES:
+                Fighter[] allies = this.combatManager.GetAllyTeam();
+                foreach (var receiver in allies)
+                {
+                    skill.AddReceiver(receiver);
+                }
 
-        // Opcional: Destruir la instancia del prefab si solo necesitas el sprite
-        Destroy(characterInstance);
+                break;
+            case SkillTargeting.ALL_OPPONENTS:
+                Fighter[] enemies = this.combatManager.GetOpposingTeam();
+                foreach (var receiver in enemies)
+                {
+                    skill.AddReceiver(receiver);
+                }
+                break;
+
+            case SkillTargeting.SINGLE_ALLY:
+            case SkillTargeting.SINGLE_OPPONENT:
+                throw new System.InvalidOperationException("Unimplemented! This skill needs manual targeting.");
+        }
     }
 
+    protected Fighter[] GetSkillTargets(Skill skill)
+    {
+        switch (skill.targeting)
+        {
+            case SkillTargeting.AUTO:
+            case SkillTargeting.ALL_ALLIES:
+            case SkillTargeting.ALL_OPPONENTS:
+                throw new System.InvalidOperationException("Unimplemented! This skill doesn't need manual targeting.");
+
+            case SkillTargeting.SINGLE_ALLY:
+                return this.combatManager.GetAllyTeam();
+            case SkillTargeting.SINGLE_OPPONENT:
+                return this.combatManager.GetOpposingTeam();
+        }
+
+        // Esto no debería ejecutarse nunca pero hay que ponerlo para hacer al compilador feliz.
+        throw new System.InvalidOperationException("Fighter::GetSkillTargets. Unreachable!");
+    }
 
     protected void Die()
     {
         this.statusPanel.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
-
-        if (this.isAlive == false)
-        {
-            animator.Play("Muelte");
-            Invoke("Die", 2f);
-        }
     }
 
     public void ModifyHealth(float amount)
     {
         this.stats.health = Mathf.Clamp(this.stats.health + amount, 0f, this.stats.maxHealth);
+
         this.stats.health = Mathf.Round(this.stats.health);
         this.statusPanel.SetHealth(this.stats.health, this.stats.maxHealth);
 
         if (this.isAlive == false)
         {
-            Invoke("Die", 2f);
+            Invoke("Die", 0.75f);
         }
     }
 
@@ -92,22 +112,15 @@ public abstract class Fighter : MonoBehaviour
         return modedStats;
     }
 
-    public void SetCharacterSprite(Sprite characterSprite)
+    public StatusCondition GetCurrentStatusCondition()
     {
-        Debug.Log("SetCharacterSprite ejecutado con sprite: " + characterSprite.name);
+        if (this.statusCondition != null && this.statusCondition.hasExpired)
+        {
+            Destroy(this.statusCondition.gameObject);
+            this.statusCondition = null;
+        }
 
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.sprite = characterSprite;
-        }
-        else
-        {
-            Debug.LogError("SpriteRenderer no asignado en " + this.name);
-        }
-    }
-    public SpriteRenderer GetSpriteRenderer()
-    {
-        return spriteRenderer;
+        return this.statusCondition;
     }
 
     public abstract void InitTurn();

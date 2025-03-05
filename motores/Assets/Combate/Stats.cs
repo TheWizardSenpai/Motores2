@@ -1,37 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Stats
 {
-    //Salud
     public float health;
-    //Salud Maxima
     public float maxHealth;
 
     public int level;
     public float attack;
     public float deffense;
-    //Spirit = mana bug
     public float spirit;
+    public float speed;
 
-    public Stats(int level, float maxHealth, float attack, float deffense, float spirit)
+    public Stats(int _level, float _maxhealth, float _attack, float _deffense, float _spirit, float _speed)
     {
-        this.level = level;
-        this.maxHealth = maxHealth;
-        this.health = maxHealth;
-        this.attack = attack;
-        this.deffense = deffense;
-        this.spirit = spirit;
+        this.level = _level;
+
+        this.maxHealth = _maxhealth;
+        this.health = _maxhealth;
+
+        this.attack = _attack;
+        this.deffense = _deffense;
+        this.spirit = _spirit;
+        this.speed = _speed;
     }
+
     public Stats Clone()
     {
-        return new Stats(this.level, this.maxHealth, this.attack, this.deffense, this.spirit);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        return new Stats(this.level, this.maxHealth, this.attack, this.deffense, this.spirit, this.speed);
     }
 }

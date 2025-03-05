@@ -1,5 +1,5 @@
 using UnityEngine;
-//TP2 FACUNDO FERREIRO
+
 public enum HealthModType
 {
     STAT_BASED, FIXED, PERCENTAGE
@@ -10,35 +10,27 @@ public class HealthModSkill : Skill
     [Header("Health Mod")]
     public float amount;
 
-
     public HealthModType modType;
 
     [Range(0f, 1f)]
     public float critChance = 0;
 
-    protected override void OnRun()
+    protected override void OnRun(Fighter receiver)
     {
-        float amount = this.GetModification();
+        float amount = this.GetModification(receiver);
 
         float dice = Random.Range(0f, 1f);
-
 
         if (dice <= this.critChance)
         {
             amount *= 2f;
             this.messages.Enqueue("Critical hit!");
-            this.messages.Enqueue("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
         }
 
-        else
-        {
-            this.messages.Enqueue("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
-        }
-
-
-        receiver.ModifyHealth(((int)amount));
+        receiver.ModifyHealth(amount);
     }
-    public float GetModification()
+
+    public float GetModification(Fighter receiver)
     {
         switch (this.modType)
         {
@@ -60,5 +52,4 @@ public class HealthModSkill : Skill
 
         throw new System.InvalidOperationException("HealthModSkill::GetDamage. Unreachable!");
     }
-    
 }

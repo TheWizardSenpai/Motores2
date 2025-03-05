@@ -1,42 +1,45 @@
-
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class PlayerSkillPanel : MonoBehaviour
 {
     public GameObject[] skillButtons;
     public Text[] skillButtonLabels;
-    public GameObject skillPanel;
-    public TextMeshProUGUI levelText;
 
-    private void Awake()
+    private PlayerFighter targetFigther;
+
+    void Awake()
     {
         this.Hide();
-
-        foreach (var btn in this.skillButtons)
-        {
-            btn.SetActive(false);
-        }
-
     }
-    private void Start()
-    {
-        levelText.text = "Level " + (GameManager.Instance.level+1).ToString();
-    }
-    public void ConfigureButtons(int index, string skillName)
+
+    public void ConfigureButton(int index, string skillName)
     {
         this.skillButtons[index].SetActive(true);
         this.skillButtonLabels[index].text = skillName;
     }
 
-    public void Show()
+    public void OnSkillButtonClick(int index)
     {
-        this.skillPanel.SetActive(true);
+        this.targetFigther.ExecuteSkill(index);
+    }
+
+    public void ShowForPlayer(PlayerFighter newTarget)
+    {
+        this.gameObject.SetActive(true);
+
+        this.targetFigther = newTarget;
     }
 
     public void Hide()
     {
-        this.skillPanel.SetActive(false);
+        this.gameObject.SetActive(false);
+
+        foreach (var btn in this.skillButtons)
+        {
+            btn.SetActive(false);
+        }
     }
+
+
 }

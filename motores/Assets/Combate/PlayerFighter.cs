@@ -4,37 +4,56 @@ public class PlayerFighter : Fighter
 {
     [Header("UI")]
     public PlayerSkillPanel skillPanel;
+    public EnemiesPanel enemiesPanel;
+
+    private Skill skillToBeExecuted;
 
     void Awake()
     {
-        this.stats = new Stats(21, 60, 50, 45, 20);
+        this.stats = new Stats(21, 60, 50, 45, 20, 20);
     }
 
     public override void InitTurn()
     {
-        this.skillPanel.Show();
+        this.skillPanel.ShowForPlayer(this);
 
         for (int i = 0; i < this.skills.Length; i++)
         {
-            this.skillPanel.ConfigureButtons(i, this.skills[i].skillName);
+            this.skillPanel.ConfigureButton(i, this.skills[i].skillName);
         }
     }
 
+    /// ================================================
+    /// <summary>
+    /// Se llama desde EnemiesPanel.
+    /// </summary>
+    /// <param name="index"></param>
     public void ExecuteSkill(int index)
     {
-        this.skillPanel.Hide();
-        animator.Play("Attack");
-        Skill skill = this.skills[index];
+        this.skillToBeExecuted = this.skills[index];
+        this.skillToBeExecuted.SetEmitter(this);
 
-        // EXECUTE
-        skill.SetEmitterAndReceiver(this, this.combatManager.GetOpposingCharacter());
-        this.combatManager.OnFighterSkill(skill);
+        if (this.skillToBeExecuted.needsManualTargeting)
+        {
+            Fighter[] receivers = this.GetSkillTargets(this.skillToBeExecuted);
+            this.enemiesPanel.Show(this, receivers);
+        }
+        else
+        {
+            this.AutoConfigureSkillTargeting(this.skillToBeExecuted);
 
-        Invoke(nameof(ResetAnimation), 0.5f);
+            this.combatManager.OnFighterSkill(this.skillToBeExecuted);
+            this.skillPanel.Hide();
+        }
     }
 
-    private void ResetAnimation()
+    public void SetTargetAndAttack(Fighter enemyFigther)
     {
-        animator.Play("IDLE");
+        this.skillToBeExecuted.AddReceiver(enemyFigther);
+
+        this.combatManager.OnFighterSkill(this.skillToBeExecuted);
+
+        this.skillPanel.Hide();
+        this.enemiesPanel.Hide();
     }
 }

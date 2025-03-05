@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: CharacterDatabase
   m_EditorClassIdentifier: 
   characters:
-  - characterName: slime
-    characterPrefab: {fileID: 5088922313465979325, guid: 8e827f7ab8d52af46ae650b0b5f7f021, type: 3}
   - characterName: lobo
     characterPrefab: {fileID: 4993723378500727978, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
   - characterName: samurai
