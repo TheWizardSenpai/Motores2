@@ -29,8 +29,14 @@ public class HealthModSkill : Skill
         }
         else
         {
-            this.messages.Enqueue("Hit for " + (Mathf.Abs(amount)).ToString("f0") + (" to " + receiver.idName));
+            if (skillType == SkillType.Heal)
+                this.messages.Enqueue("Heal for " + (int)amount + (" to " + receiver.idName));
+
+            else
+
+                this.messages.Enqueue("Hit for " + (int)amount + (" to " + receiver.idName));
         }
+
         receiver.ModifyHealth(amount);
     }
 

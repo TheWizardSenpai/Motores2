@@ -231,6 +231,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  skillType: 0
   amount: -50
   modType: 0
   critChance: 1
@@ -283,6 +284,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  skillType: 0
   amount: -40
   modType: 0
   critChance: 0.3
@@ -336,6 +338,7 @@ MonoBehaviour:
   animationDuration: 1
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
+  skillType: 0
   message: Bajo la defensa del rival en 10!
 --- !u!114 &7093549484884788776
 MonoBehaviour:
@@ -362,7 +365,7 @@ GameObject:
   - component: {fileID: 203600248587392236}
   - component: {fileID: 2020887611269513002}
   m_Layer: 0
-  m_Name: Curacion
+  m_Name: Luna Llena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,11 +398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Curacion
+  skillName: Luna Llena
   animationName: 
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: 20
+  skillType: 2
+  amount: 50
   modType: 0
   critChance: 0

@@ -1,16 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
+public enum SkillType
+{
+    AttackSimple,
+    SpecialHability,
+    Heal,
+    BossHability
+}
 
 public abstract class Skill : MonoBehaviour
 {
 
-    public enum SkillType
-    {
-        AttackSimple,
-        SpecialHability,
-        Heal,
-        BossHability
-    }
 
     [Header("Base Skill")]
     public string skillName;
@@ -20,7 +22,7 @@ public abstract class Skill : MonoBehaviour
     public GameObject effectPrfb;
     protected Fighter emitter;
     protected List<Fighter> receivers;
-
+    public SkillType skillType;
     protected Queue<string> messages;
 
     public bool needsManualTargeting
