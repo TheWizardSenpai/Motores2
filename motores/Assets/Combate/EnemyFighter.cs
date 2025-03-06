@@ -37,6 +37,7 @@ public class EnemyFighter : Fighter
             Fighter target = targets[Random.Range(0, targets.Length)];
 
             skill.AddReceiver(target);
+            Invoke(nameof(ResetAnimation), 0.5f);
         }
         else
         {
@@ -44,6 +45,11 @@ public class EnemyFighter : Fighter
         }
 
         this.combatManager.OnFighterSkill(skill);
+    }
+
+    private void ResetAnimation()
+    {
+        animator.Play("IDLE"); // Cambia la animaci?n a Idle
     }
 }
 
