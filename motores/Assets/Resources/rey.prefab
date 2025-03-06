@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: "Pu\xF1o del Trono"
+  animationName: Attack2
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Rugido Real
+  animationName: Attack2
   animationDuration: 1
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
@@ -311,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Golpe Real
+  animationName: Attack
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
@@ -393,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Fuerza Imperial
+  animationName: Attack
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}

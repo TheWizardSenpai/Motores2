@@ -3,6 +3,15 @@ using System.Collections.Generic;
 
 public abstract class Skill : MonoBehaviour
 {
+
+    public enum SkillType
+    {
+        AttackSimple,
+        SpecialHability,
+        Heal,
+        BossHability
+    }
+
     [Header("Base Skill")]
     public string skillName;
     public string animationName;

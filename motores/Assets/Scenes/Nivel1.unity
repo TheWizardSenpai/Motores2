@@ -1053,6 +1053,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5160316684286037997, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: targeting
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160316684286037997, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: animationName
+      value: Attack
+      objectReference: {fileID: 0}
     - target: {fileID: 5160316684286037998, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: m_IsActive
       value: 0
