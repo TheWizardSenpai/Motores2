@@ -55,3 +55,17 @@ MonoBehaviour:
     LargeDescription: Mago del segundo nivel
     Name: Lobo
     CharacterSwitcherIndex: 0
+  - isMainCharacter: 0
+    isSecondaryCharacter: 0
+    enemyPrefab: {fileID: 647374135592699279, guid: 6f79e3ecb6c300a4ab4c5ceeaa06b6f5, type: 3}
+    prefabIndex: 3
+    maxHealth: 50
+    level: 25
+    attack: 35
+    deffense: 40
+    spirit: 10
+    speed: 1
+    Description: Mago
+    LargeDescription: Mago del segundo nivel
+    Name: Lobo
+    CharacterSwitcherIndex: 0

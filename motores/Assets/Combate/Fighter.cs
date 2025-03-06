@@ -123,5 +123,6 @@ public abstract class Fighter : MonoBehaviour
         return this.statusCondition;
     }
 
+
     public abstract void InitTurn();
 }

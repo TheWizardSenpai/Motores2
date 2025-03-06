@@ -71,6 +71,7 @@ public class CombatManager : MonoBehaviour
         playerCharacterInstance.SetActive(true); // ? Activar el prefab despu?s de instanciarlo
         Animator characterAnimator = playerCharacterInstance.GetComponent<Animator>();
         PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>();
+
         playerFighter.skillPanel = this.skillPanel;
         this.fighters = GameObject.FindObjectsOfType<Fighter>();
         this.MakeTeams();
@@ -150,7 +151,7 @@ public class CombatManager : MonoBehaviour
                     if (nextMessage != null)
                     {
                         LogPanel.Write(nextMessage);
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(0.5f);
                     }
                     else
                     {
@@ -164,7 +165,7 @@ public class CombatManager : MonoBehaviour
                     GameManager.Instance.sumarcoinst(30);
                     if (GameManager.Instance.level < 1)
                     {
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(0.5f);
                         GameManager.Instance.level++;
                     }
                     foreach (var fgtr in this.enemyFighters)
@@ -192,7 +193,7 @@ public class CombatManager : MonoBehaviour
                     yield return null;
                     break;
                 case CombatStatus.NEXT_TURN:
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.5f);
                     Fighter current = null;
 
                     do
@@ -223,7 +224,7 @@ public class CombatManager : MonoBehaviour
                                 break;
                             }
                             LogPanel.Write(nextSCMessage);
-                            yield return new WaitForSeconds(2f);
+                            yield return new WaitForSeconds(0.5f);
                         }
                         if (statusCondition.BlocksTurn())
                         {

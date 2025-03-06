@@ -99,8 +99,8 @@ MonoBehaviour:
   healthBar: {fileID: 2018608661583092796}
   healthLabel: {fileID: 6510682943536752698}
   nameTextLabel: {fileID: 0}
-  actualDefense: {fileID: 2999424775229516169}
-  actualAttack: {fileID: 2999424776035459117}
+  actualDefense: {fileID: 2999424776035459117}
+  actualAttack: {fileID: 2999424775229516169}
 --- !u!1 &1715411055698421821
 GameObject:
   m_ObjectHideFlags: 0

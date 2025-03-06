@@ -123,14 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f963ce67d26b3284689e20c4eac0aabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: -5161293681388224591}
+  team: 0
   idName: rey
-  statusPanel: {fileID: 0}
-  combatManager: {fileID: 0}
+  statusPanel: {fileID: 1501909542539451402, guid: 4ec1ddc807d27b2499df88a0a7a7d3fa, type: 3}
+  combatManager: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
   statusMods: []
-  animator: {fileID: 7718587661497318022}
-  DamagePivot: {fileID: 1049214037854579529}
-  skillPanel: {fileID: 0}
+  statusCondition: {fileID: 0}
+  skillPanel: {fileID: 6840013669206806899, guid: 6e12d1058f8897243a15e0d9e99260b6, type: 3}
+  enemiesPanel: {fileID: 4757568034581197649, guid: f02a60f3b5230ba4fb7ada76a84a03fd, type: 3}
+  figherIndex: 3
+  fightersDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!114 &3547785930753721796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,10 +194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Rompe huesos
   animationDuration: 2
-  selfInflicted: 0
+  targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: -40
-  modType: 0
+  modType: 1
   critChance: 0.3
 --- !u!1 &2057316579319052312
 GameObject:
@@ -244,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Intimidar
   animationDuration: 1
-  selfInflicted: 0
+  targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
   message: Bajo la defensa del rival en 10!
 --- !u!114 &2390198040757512941
@@ -307,10 +309,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Furia Dragon
   animationDuration: 2
-  selfInflicted: 0
+  targeting: 4
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   amount: -50
-  modType: 0
+  modType: 1
   critChance: 1
 --- !u!1 &4252208588702162846
 GameObject:
@@ -358,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Curacion
   animationDuration: 2
-  selfInflicted: 1
+  targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: 20
   modType: 0
