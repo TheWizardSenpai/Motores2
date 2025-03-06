@@ -126,13 +126,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   idName: rey
-  statusPanel: {fileID: 7463419871028375749, guid: 8b9a98ab57af62c4b9ea2e36c5a5cfb0, type: 3}
+  statusPanel: {fileID: 0}
   combatManager: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
   statusMods: []
   animator: {fileID: 7718587661497318022}
   statusCondition: {fileID: 0}
   DamagePivot: {fileID: 8446102481655307746}
-  skillPanel: {fileID: 6840013669206806899, guid: 6e12d1058f8897243a15e0d9e99260b6, type: 3}
+  skillPanel: {fileID: 0}
   enemiesPanel: {fileID: 4757568034581197649, guid: f02a60f3b5230ba4fb7ada76a84a03fd, type: 3}
   figherIndex: 3
   fightersDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 481537380772120609}
   - component: {fileID: 2453636042777775451}
   m_Layer: 0
-  m_Name: Rompe huesos
+  m_Name: "Pu\xF1o del Trono"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
+  skillName: "Pu\xF1o del Trono"
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 4010700215815927245}
   - component: {fileID: 2390198040757512941}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Rugido Real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidar
+  skillName: Rugido Real
   animationDuration: 1
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 1177792700220925427}
   - component: {fileID: 1954386556104356591}
   m_Layer: 0
-  m_Name: Furia Dragon
+  m_Name: Golpe Real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,12 +310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Furia Dragon
+  skillName: Golpe Real
   animationDuration: 2
-  targeting: 4
+  targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   amount: -50
-  modType: 1
+  modType: 0
   critChance: 1
 --- !u!1 &3690386157912546632
 GameObject:
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 6062323336127316575}
   - component: {fileID: 5713260936945531669}
   m_Layer: 0
-  m_Name: Curacion
+  m_Name: Fuerza Imperial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Curacion
+  skillName: Fuerza Imperial
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}

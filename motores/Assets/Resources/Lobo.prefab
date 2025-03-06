@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 1526129925554622727}
   - component: {fileID: 5243472969797800156}
   m_Layer: 0
-  m_Name: Furia Dragon
+  m_Name: Garra Lunar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,9 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Churrasco
+  skillName: Garra Lunar
+  animationName: Attack
   animationDuration: 2
-  targeting: 4
+  targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   amount: -50
   modType: 0
@@ -244,7 +245,7 @@ GameObject:
   - component: {fileID: 2352657419626391524}
   - component: {fileID: 4034871666120292107}
   m_Layer: 0
-  m_Name: Rompe huesos
+  m_Name: Zarpazo Sanguinario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
+  skillName: Zarpazo Sanguinario
+  animationName: 
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
@@ -296,7 +298,7 @@ GameObject:
   - component: {fileID: 8632231176326446683}
   - component: {fileID: 7093549484884788776}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Aullido Bestial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidar
+  skillName: Aullido Bestial
+  animationName: 
   animationDuration: 1
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
@@ -393,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Curacion
+  animationName: 
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}

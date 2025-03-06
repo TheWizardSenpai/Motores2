@@ -68,7 +68,7 @@ public class CombatManager : MonoBehaviour
         GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, personajePosition.transform.position, personajePosition.transform.rotation);
         playerCharacterInstance.SetActive(true); // ? Activar el prefab despu?s de instanciarlo
         Animator characterAnimator = playerCharacterInstance.GetComponent<Animator>();
-        PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>().GetSkillPanel(skillPanel, statusPanel, enemiesPanel); ;
+        PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>().GetSkillPanel(skillPanel, statusPanel, enemiesPanel);
 
         this.fighters = GameObject.FindObjectsOfType<Fighter>();
         playerFighter.skillPanel = this.skillPanel;
@@ -165,7 +165,7 @@ public class CombatManager : MonoBehaviour
                     if (nextMessage != null)
                     {
                         LogPanel.Write(nextMessage);
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(0.5f);
                     }
                     else
                     {

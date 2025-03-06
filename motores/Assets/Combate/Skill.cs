@@ -5,12 +5,10 @@ public abstract class Skill : MonoBehaviour
 {
     [Header("Base Skill")]
     public string skillName;
+    public string animationName;
     public float animationDuration;
-
     public SkillTargeting targeting;
-
     public GameObject effectPrfb;
-
     protected Fighter emitter;
     protected List<Fighter> receivers;
 
@@ -64,6 +62,7 @@ public abstract class Skill : MonoBehaviour
     public void AddReceiver(Fighter _receiver)
     {
         this.receivers.Add(_receiver);
+        emitter.animator.Play(animationName);
     }
 
     public string GetNextMessage()

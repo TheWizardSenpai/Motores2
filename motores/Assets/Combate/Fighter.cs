@@ -97,7 +97,17 @@ public abstract class Fighter : MonoBehaviour
 
         if (this.isAlive == false)
         {
-            Invoke("Die", 0.75f);
+            animator.Play("Death");
+            Invoke("Die", 2f);
+        }
+
+        if (amount > 0f)
+        {
+            this.animator.Play("Heal");
+        }
+        else
+        {
+            this.animator.Play("Damages");
         }
     }
 

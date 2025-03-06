@@ -45,12 +45,12 @@ MonoBehaviour:
     isSecondaryCharacter: 0
     enemyPrefab: {fileID: 4993723378500727978, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
     prefabIndex: 2
-    maxHealth: 200
+    maxHealth: 100
     level: 25
-    attack: 35
-    deffense: 40
+    attack: 55
+    deffense: 20
     spirit: 10
-    speed: 1
+    speed: 10
     Description: Mago
     LargeDescription: Mago del segundo nivel
     Name: Lobo
@@ -59,10 +59,10 @@ MonoBehaviour:
     isSecondaryCharacter: 0
     enemyPrefab: {fileID: 647374135592699279, guid: 6f79e3ecb6c300a4ab4c5ceeaa06b6f5, type: 3}
     prefabIndex: 3
-    maxHealth: 50
+    maxHealth: 90
     level: 25
-    attack: 35
-    deffense: 40
+    attack: 20
+    deffense: 60
     spirit: 10
     speed: 1
     Description: Mago
@@ -73,12 +73,12 @@ MonoBehaviour:
     isSecondaryCharacter: 0
     enemyPrefab: {fileID: 8506440569128047920, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
     prefabIndex: 4
-    maxHealth: 50
+    maxHealth: 80
     level: 25
-    attack: 50
-    deffense: 20
+    attack: 35
+    deffense: 35
     spirit: 10
-    speed: 1
+    speed: 20
     Description: Mago
     LargeDescription: Mago del segundo nivel
     Name: Lobo
