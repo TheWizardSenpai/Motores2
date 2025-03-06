@@ -576,6 +576,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5889936391051471346, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
+      propertyPath: statusPanel
+      value: 
+      objectReference: {fileID: 7463419871028375749, guid: 8b9a98ab57af62c4b9ea2e36c5a5cfb0, type: 3}
+    - target: {fileID: 5889936391051471346, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
+      propertyPath: enemiesPanel
+      value: 
+      objectReference: {fileID: 6815574627141431667, guid: 76707ad5a8bc1a5418db269958605d5c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
 --- !u!4 &4408919054012218391 stripped

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4173312396413367507}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -23.743092, y: -0.4483323, z: 0.030499859}
+  m_LocalPosition: {x: 0.1, y: 3.7, z: 0.030499859}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,13 +157,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   idName: Lobo
-  statusPanel: {fileID: 7463419871028375749, guid: 8b9a98ab57af62c4b9ea2e36c5a5cfb0, type: 3}
+  statusPanel: {fileID: 0}
   combatManager: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
   statusMods: []
+  animator: {fileID: 4196516629722213171}
   statusCondition: {fileID: 0}
   DamagePivot: {fileID: 6989606808065782351}
-  skillPanel: {fileID: 6840013669206806899, guid: 6e12d1058f8897243a15e0d9e99260b6, type: 3}
-  enemiesPanel: {fileID: 4757568034581197649, guid: f02a60f3b5230ba4fb7ada76a84a03fd, type: 3}
+  skillPanel: {fileID: 0}
+  enemiesPanel: {fileID: 0}
   figherIndex: 2
   fightersDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!114 &7591940313130537703
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Churrasco
   animationDuration: 2
-  targeting: 2
+  targeting: 4
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   amount: -50
   modType: 0

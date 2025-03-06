@@ -23,7 +23,9 @@ public class CombatManager : MonoBehaviour
     private bool isCombatActive;
 
     private CombatStatus combatStatus;
+    public EnemiesPanel enemiesPanel;
     public PlayerSkillPanel skillPanel;
+    public StatusPanel statusPanel;
     private Skill currentFighterSkill;
 
     private List<Fighter> returnBuffer;
@@ -66,7 +68,8 @@ public class CombatManager : MonoBehaviour
         GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, personajePosition.transform.position, personajePosition.transform.rotation);
         playerCharacterInstance.SetActive(true); // ? Activar el prefab despu?s de instanciarlo
         Animator characterAnimator = playerCharacterInstance.GetComponent<Animator>();
-        PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>();
+        PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>().GetSkillPanel(skillPanel, statusPanel, enemiesPanel); ;
+
         this.fighters = GameObject.FindObjectsOfType<Fighter>();
         playerFighter.skillPanel = this.skillPanel;
         this.SortFightersBySpeed();

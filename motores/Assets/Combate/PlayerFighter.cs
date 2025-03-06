@@ -50,7 +50,7 @@ public class PlayerFighter : Fighter
     {
         this.skillToBeExecuted = this.skills[index];
         this.skillToBeExecuted.SetEmitter(this);
-
+        animator.Play("Attack");
         if (this.skillToBeExecuted.needsManualTargeting)
         {
             Fighter[] receivers = this.GetSkillTargets(this.skillToBeExecuted);
@@ -62,6 +62,7 @@ public class PlayerFighter : Fighter
 
             this.combatManager.OnFighterSkill(this.skillToBeExecuted);
             this.skillPanel.Hide();
+            Invoke(nameof(ResetAnimation), 0.5f);
         }
     }
 
@@ -74,16 +75,19 @@ public class PlayerFighter : Fighter
         this.skillPanel.Hide();
         this.enemiesPanel.Hide();
     }
+    private void ResetAnimation()
+    {
+        animator.Play("IDLE"); // Cambia la animaci?n a Idle
+    }
+    public PlayerFighter GetSkillPanel(PlayerSkillPanel newSkillPanel, StatusPanel newStatusPanel, EnemiesPanel newEnemiesPanel)
+    {
+     skillPanel = newSkillPanel;
+     statusPanel = newStatusPanel;
+    enemiesPanel = newEnemiesPanel;
+    //Configurar el StatusPanel con los stats actuales
+    this.statusPanel.SetStats(this.idName, this.GetCurrentStats());
+    return this;
 
-    //public PlayerFighter GetSkillPanel(PlayerSkillPanel newSkillPanel, StatusPanel newStatusPanel, EnemiesPanel newEnemiesPanel)
-    //{
-    // skillPanel = newSkillPanel;
-    //  statusPanel = newStatusPanel;
-    //  enemiesPanel = newEnemiesPanel;
-    // Configurar el StatusPanel con los stats actuales
-    //  this.statusPanel.SetStats(this.idName, this.GetCurrentStats());
-    // return this;
-
-    // }
+    }
 
 }

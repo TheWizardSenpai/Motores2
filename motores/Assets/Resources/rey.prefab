@@ -129,6 +129,7 @@ MonoBehaviour:
   statusPanel: {fileID: 7463419871028375749, guid: 8b9a98ab57af62c4b9ea2e36c5a5cfb0, type: 3}
   combatManager: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
   statusMods: []
+  animator: {fileID: 7718587661497318022}
   statusCondition: {fileID: 0}
   DamagePivot: {fileID: 8446102481655307746}
   skillPanel: {fileID: 6840013669206806899, guid: 6e12d1058f8897243a15e0d9e99260b6, type: 3}
@@ -340,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690386157912546632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.695935, y: -0.032023735, z: -0.0021785612}
+  m_LocalPosition: {x: -1.56, y: 6.32, z: -0.0021785612}
   m_LocalScale: {x: 0.14285713, y: 0.14285713, z: 0.14285713}
   m_ConstrainProportionsScale: 0
   m_Children: []

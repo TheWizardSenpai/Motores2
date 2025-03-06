@@ -15,7 +15,7 @@ MonoBehaviour:
   characters:
   - characterName: lobo
     characterPrefab: {fileID: 4993723378500727978, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
-  - characterName: samurai
+  - characterName: Katana
     characterPrefab: {fileID: 8506440569128047920, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
   - characterName: rey
     characterPrefab: {fileID: 647374135592699279, guid: 6f79e3ecb6c300a4ab4c5ceeaa06b6f5, type: 3}

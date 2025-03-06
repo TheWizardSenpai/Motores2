@@ -15,7 +15,7 @@ public abstract class Fighter : MonoBehaviour
     protected Stats stats;
 
     protected Skill[] skills;
-
+    public Animator animator;
     public StatusCondition statusCondition;
     [SerializeField]
     public Transform DamagePivot;

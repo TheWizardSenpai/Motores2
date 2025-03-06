@@ -569,17 +569,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Katana
       objectReference: {fileID: 0}
+    - target: {fileID: 8506440569128047920, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.064401
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6402435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0.432
       objectReference: {fileID: 0}
     - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92
+      value: -0.1205
       objectReference: {fileID: 0}
     - target: {fileID: 8506440569128047923, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
       propertyPath: m_LocalPosition.z
