@@ -3,7 +3,13 @@ guid: f963ce67d26b3284689e20c4eac0aabc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - statusPanel: {instanceID: 0}
+  - combatManager: {instanceID: 0}
+  - statusCondition: {instanceID: 0}
+  - skillPanel: {instanceID: 0}
+  - enemiesPanel: {instanceID: 0}
+  - fightersDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

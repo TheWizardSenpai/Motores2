@@ -21,13 +21,18 @@ public class PlayerSkillPanel : MonoBehaviour
 
     public void OnSkillButtonClick(int index)
     {
+        if (this.targetFigther == null)
+        {
+            Debug.LogError("targetFigther es null en OnSkillButtonClick.");
+            return;
+        }
+
         this.targetFigther.ExecuteSkill(index);
     }
 
     public void ShowForPlayer(PlayerFighter newTarget)
     {
         this.gameObject.SetActive(true);
-
         this.targetFigther = newTarget;
     }
 

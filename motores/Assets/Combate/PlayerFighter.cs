@@ -1,16 +1,35 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class PlayerFighter : Fighter
 {
     [Header("UI")]
     public PlayerSkillPanel skillPanel;
     public EnemiesPanel enemiesPanel;
-
+    public int figherIndex;
     private Skill skillToBeExecuted;
+    public EnemyDataBase fightersDateBase;
 
+
+    private int activeAllyIndex;
+    
+   
+
+    private List<Fighter> allies;
     void Awake()
     {
-        this.stats = new Stats(21, 60, 50, 45, 20, 20);
+        var data = fightersDateBase.EnemyDB[figherIndex];
+        //_IAEnemySimple = gameObject.GetComponent<IAEnemySimple>();
+        //
+
+        if (data.level != 0)
+            this.stats = new Stats(data.level, data.maxHealth, data.attack, data.deffense, data.spirit, data.speed);
+        else
+            this.stats = new Stats(21, 60, 50, 45, 20, 20);
+
+        allies = new List<Fighter>();
+        allies.Add(this); // Agregar al jugador actual como el primer aliado activo
+        activeAllyIndex = 0; // Establecer el jugador actual como el aliado activo inicialmente
+
     }
 
     public override void InitTurn()
@@ -22,7 +41,6 @@ public class PlayerFighter : Fighter
             this.skillPanel.ConfigureButton(i, this.skills[i].skillName);
         }
     }
-
     /// ================================================
     /// <summary>
     /// Se llama desde EnemiesPanel.
@@ -56,4 +74,16 @@ public class PlayerFighter : Fighter
         this.skillPanel.Hide();
         this.enemiesPanel.Hide();
     }
+
+    //public PlayerFighter GetSkillPanel(PlayerSkillPanel newSkillPanel, StatusPanel newStatusPanel, EnemiesPanel newEnemiesPanel)
+    //{
+    // skillPanel = newSkillPanel;
+    //  statusPanel = newStatusPanel;
+    //  enemiesPanel = newEnemiesPanel;
+    // Configurar el StatusPanel con los stats actuales
+    //  this.statusPanel.SetStats(this.idName, this.GetCurrentStats());
+    // return this;
+
+    // }
+
 }

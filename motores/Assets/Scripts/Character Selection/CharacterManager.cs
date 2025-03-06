@@ -56,10 +56,20 @@ public class CharacterManager : MonoBehaviour
         Character character = characterDB.GetCharacter(selectedOption);
         // Si necesitas instanciar el prefab en la escena
         GameObject characterInstance = Instantiate(character.characterPrefab, transform.position, Quaternion.identity);
-
+        PlayerFighter playerFighter = characterInstance.GetComponent<PlayerFighter>();
+        
         // Si simplemente necesitas obtener el SpriteRenderer del prefab:
         SpriteRenderer spriteRenderer = character.characterPrefab.GetComponent<SpriteRenderer>();
         artworkSprite.sprite = spriteRenderer.sprite;
+        if (playerFighter != null)
+        {
+            // Ahora puedes acceder a las propiedades y métodos de PlayerFighter
+            // Por ejemplo, puedes configurar habilidades o realizar otras acciones
+        }
+        else
+        {
+            Debug.LogError("PlayerFighter no encontrado en el prefab instanciado.");
+        }
 
     }
 

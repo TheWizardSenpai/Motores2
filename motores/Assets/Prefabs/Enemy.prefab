@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Curacion
   animationDuration: 2
-  selfInflicted: 1
+  targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: 20
   modType: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Rompe huesos
   animationDuration: 2
-  selfInflicted: 0
+  targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: -40
   modType: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Intimidacion
   animationDuration: 1
-  selfInflicted: 0
+  targeting: 0
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
   message: Bajo la defensa del rival en 10!
 --- !u!114 &4099514983204695817
@@ -368,12 +368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752c2a09dc6a3894087b11e8d0669f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
   idName: Mago
   statusPanel: {fileID: 0}
   combatManager: {fileID: 0}
   statusMods: []
-  animator: {fileID: 4099514982547713526}
-  DamagePivot: {fileID: 5656168737497771518}
+  statusCondition: {fileID: 0}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!1 &4099514983437881098
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Furia Dragon
   animationDuration: 2
-  selfInflicted: 0
+  targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   amount: -50
   modType: 0

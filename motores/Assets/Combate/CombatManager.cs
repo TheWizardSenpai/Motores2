@@ -14,13 +14,15 @@ public enum CombatStatus
 
 public class CombatManager : MonoBehaviour
 {
+    public EnemiesPanel enemiesPanel;
+    public StatusPanel statusPanel1;
+    public PlayerSkillPanel skillPanel;
     private GameManager gameManagerInstance;
     private Fighter[] playerTeam;
     private Fighter[] enemyTeam;
     public Fighter[] fighters;
     private int fighterIndex;
     private bool isCombatActive;
-    public GameObject statusPanelPrefab;
 
     private CombatStatus combatStatus;
 
@@ -39,10 +41,7 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
-        foreach (var fighter in fighters)
-        {
-            fighter.statusPanel = Instantiate(statusPanelPrefab, fighter.transform).GetComponent<StatusPanel>();
-        }
+
         gameManagerInstance = GameObject.FindObjectOfType<GameManager>();
         this.returnBuffer = new List<Fighter>();
         if (gameManagerInstance == null)
@@ -71,7 +70,8 @@ public class CombatManager : MonoBehaviour
         GameObject playerCharacterInstance = Instantiate(selectedCharacter.characterPrefab, personajePosition.transform.position, personajePosition.transform.rotation);
         playerCharacterInstance.SetActive(true); // ? Activar el prefab despu?s de instanciarlo
         Animator characterAnimator = playerCharacterInstance.GetComponent<Animator>();
-
+        PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>();
+        playerFighter.skillPanel = this.skillPanel;
         this.fighters = GameObject.FindObjectsOfType<Fighter>();
         this.MakeTeams();
 
@@ -269,6 +269,7 @@ public class CombatManager : MonoBehaviour
         return this.returnBuffer.ToArray();
     }
 
+
     public Fighter[] GetOpposingTeam()
     {
         Fighter currentFighter = this.fighters[this.fighterIndex];
@@ -309,4 +310,5 @@ public class CombatManager : MonoBehaviour
         this.currentFighterSkill = skill;
         this.combatStatus = CombatStatus.FIGHTER_ACTION;
     }
+
 }

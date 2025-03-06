@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +9,34 @@ public class StatusPanel : MonoBehaviour
 
     public Image healthBar;
     public Text healthLabel;
-
-
+    public TextMeshProUGUI nameTextLabel;
+    public TextMeshProUGUI actualDefense;
+    public TextMeshProUGUI actualAttack;
     public void SetStats(string name, Stats stats)
     {
-        this.nameLabel.text = name;
+        if (nameLabel != null)
+            this.nameLabel.text = name;
 
-        this.levelLabel.text = $"N. {stats.level}";
+        if (nameTextLabel != null)
+        {
+            this.nameTextLabel.text = name;
+            this.nameTextLabel.fontSize = name.Length > 8 ? 4 : 6;
+
+        }
+        if (levelLabel != null)
+            this.levelLabel.text = $"N. {stats.level}";
+        if (actualAttack != null)
+        {
+            this.actualAttack.text = $"{stats.attack}";
+        }
+        if (actualDefense != null)
+        {
+            this.actualDefense.text = $"{stats.deffense}";
+        }
+
+
         this.SetHealth(stats.health, stats.maxHealth);
+
     }
     public void SetHealth(float health, float maxHealth)
     {
