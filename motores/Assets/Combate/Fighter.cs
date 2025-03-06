@@ -17,7 +17,8 @@ public abstract class Fighter : MonoBehaviour
     protected Skill[] skills;
 
     public StatusCondition statusCondition;
-
+    [SerializeField]
+    public Transform DamagePivot;
     public bool isAlive
     {
         get => this.stats.health > 0;

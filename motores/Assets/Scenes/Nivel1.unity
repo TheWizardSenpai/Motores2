@@ -154,6 +154,11 @@ Transform:
   m_Father: {fileID: 1891062844}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &66115322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5160316685594440998, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+  m_PrefabInstance: {fileID: 5160316684837063762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259608464
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +456,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 4.1746035
+  orthographic size: 4.18254
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -704,17 +709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65712a1b448f084d9d2b2048d2ab65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1853656643 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7316199381788393780, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1891062843
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +766,7 @@ MonoBehaviour:
   combatManager: {fileID: 1839064883}
   statusMods: []
   statusCondition: {fileID: 0}
+  DamagePivot: {fileID: 28340445}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!114 &1891062846
@@ -789,17 +784,6 @@ MonoBehaviour:
   fighter: {fileID: 1891062845}
   actualDefense: {fileID: 1125448213}
   actualAttack: {fileID: 1929524145}
---- !u!114 &1899071669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7316199382001584066, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1929524145 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7316199381966830790, guid: 05bfb26278882944897714672e86578a, type: 3}
@@ -886,17 +870,6 @@ MonoBehaviour:
   targeting: 4
   effectPrfb: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
   message: Bajo la defensa del rival en 10!
---- !u!114 &2033497753 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7316199382136011246, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a271803bc88060b4d954e21a43e89df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2091148817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1084,7 @@ PrefabInstance:
     - target: {fileID: 156225800351014425, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: statusPanel
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 156225800351014425, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: enemiesPanel
       value: 
@@ -1143,7 +1116,7 @@ PrefabInstance:
     - target: {fileID: 986014983685151757, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: statusPanel
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 986014983685151757, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: enemiesPanel
       value: 
@@ -1167,11 +1140,15 @@ PrefabInstance:
     - target: {fileID: 2602158021137417375, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: statusPanel
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 2602158021137417375, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: combatManager
       value: 
       objectReference: {fileID: 1839064883}
+    - target: {fileID: 3017312246037799241, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: DamagePivot
+      value: 
+      objectReference: {fileID: 66115322}
     - target: {fileID: 3431968248953582593, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1239,11 +1216,11 @@ PrefabInstance:
     - target: {fileID: 5160316685598269268, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualAttack
       value: 
-      objectReference: {fileID: 1899071669}
+      objectReference: {fileID: 0}
     - target: {fileID: 5160316685598269268, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualDefense
       value: 
-      objectReference: {fileID: 1853656643}
+      objectReference: {fileID: 0}
     - target: {fileID: 5160316685598269270, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1307,7 +1284,7 @@ PrefabInstance:
     - target: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: statusPanel
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: combatManager
       value: 
@@ -1347,11 +1324,11 @@ PrefabInstance:
     - target: {fileID: 6833358724909066085, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualAttack
       value: 
-      objectReference: {fileID: 1899071669}
+      objectReference: {fileID: 0}
     - target: {fileID: 6833358724909066085, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualDefense
       value: 
-      objectReference: {fileID: 1853656643}
+      objectReference: {fileID: 0}
     - target: {fileID: 7392633035753640342, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: targeting
       value: 2
@@ -1371,7 +1348,7 @@ PrefabInstance:
     - target: {fileID: 7616274251720450766, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: statusPanel
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 7616274251720450766, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: combatManager
       value: 
@@ -1379,11 +1356,11 @@ PrefabInstance:
     - target: {fileID: 7975460632114838330, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualAttack
       value: 
-      objectReference: {fileID: 1899071669}
+      objectReference: {fileID: 0}
     - target: {fileID: 7975460632114838330, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualDefense
       value: 
-      objectReference: {fileID: 1853656643}
+      objectReference: {fileID: 0}
     - target: {fileID: 8106516362780542535, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: targeting
       value: 2
@@ -1391,11 +1368,11 @@ PrefabInstance:
     - target: {fileID: 8349889491604815080, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualAttack
       value: 
-      objectReference: {fileID: 1853656643}
+      objectReference: {fileID: 0}
     - target: {fileID: 8349889491604815080, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualDefense
       value: 
-      objectReference: {fileID: 1899071669}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5160316685598269271, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
@@ -1470,7 +1447,7 @@ PrefabInstance:
     - target: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
       propertyPath: statusPanel1
       value: 
-      objectReference: {fileID: 2033497753}
+      objectReference: {fileID: 0}
     - target: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
       propertyPath: fighters.Array.data[0]
       value: 
@@ -1488,6 +1465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4587044474932683396, guid: 05bfb26278882944897714672e86578a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1995
+      objectReference: {fileID: 0}
     - target: {fileID: 7316199381635829058, guid: 05bfb26278882944897714672e86578a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

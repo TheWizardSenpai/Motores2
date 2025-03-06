@@ -370,10 +370,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   idName: Mago
-  statusPanel: {fileID: 0}
-  combatManager: {fileID: 0}
+  statusPanel: {fileID: 2999424775610089957, guid: 3a2c3f592020a9c4bae4b666fe3ec5fe, type: 3}
+  combatManager: {fileID: 5264765773972540703, guid: 72808a1aad11a364586ee87a0652d26c, type: 3}
   statusMods: []
   statusCondition: {fileID: 0}
+  DamagePivot: {fileID: 5656168737497771518}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
 --- !u!1 &4099514983437881098
