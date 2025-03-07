@@ -1104,6 +1104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4717280559788404481, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: animationName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4717280559950721378, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
       propertyPath: m_Name
       value: EvilWitch
@@ -1175,6 +1179,42 @@ PrefabInstance:
     - target: {fileID: 4717280559950721383, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560116329052, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: modType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560116329052, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: skillName
+      value: Vitalidad oscura
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560116329052, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560116329052, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: animationDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560777874219, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: amount
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560777874219, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: skillType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280560777874219, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: targeting
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280561231854427, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: targeting
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717280561231854427, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
+      propertyPath: animationDuration
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
@@ -1758,7 +1798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839665923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.317043, y: 0.85, z: 0.09384908}
+  m_LocalPosition: {x: -5.317043, y: 0.19, z: 0.09384908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

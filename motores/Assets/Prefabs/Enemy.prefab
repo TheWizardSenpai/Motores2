@@ -168,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4099514982699909566
 Transform:
   m_ObjectHideFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  skillType: 0
   amount: 20
   modType: 0
   critChance: 0
@@ -248,13 +249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
-  animationName: 
+  skillName: Desmembramiento
+  animationName: Attack
   animationDuration: 2
   targeting: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -40
-  modType: 0
+  effectPrfb: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
+  skillType: 0
+  amount: -2
+  modType: 2
   critChance: 0.3
 --- !u!1 &4099514983204695819
 GameObject:
@@ -268,7 +270,7 @@ GameObject:
   - component: {fileID: 4099514983204695822}
   - component: {fileID: 4099514983204695817}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Arte de guerra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,12 +303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidacion
+  skillName: Arte de guerra
   animationName: 
   animationDuration: 1
   targeting: 0
-  effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-  message: Bajo la defensa del rival en 10!
+  effectPrfb: {fileID: 1628744458893394, guid: e243632bb3aff9549abdcfcc2ef0c4f0, type: 3}
+  skillType: 0
+  message: Aumento su defensa
 --- !u!114 &4099514983204695817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  amount: -10
+  amount: 20
 --- !u!1 &4099514983333418145
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,11 +428,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Furia Dragon
-  animationName: 
+  skillName: Espadazo
+  animationName: Attack
   animationDuration: 2
   targeting: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  amount: -50
+  effectPrfb: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
+  skillType: 0
+  amount: -40
   modType: 0
   critChance: 0

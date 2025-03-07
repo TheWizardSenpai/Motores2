@@ -1751,15 +1751,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4099514982547713527, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Color.b
-      value: 0.21034172
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 4099514982547713527, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Color.g
-      value: 0.9528302
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 4099514982547713527, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Color.r
-      value: 0.30178794
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 4099514982699909561, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_IsActive
@@ -1783,19 +1783,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: message
-      value: Aumento su ataque en 10
+      value: Aumento en 10 su fuerza
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: skillName
-      value: Furia
+      value: Arte de guerra
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: targeting
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: animationName
-      value: Attack
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: selfInflicted
@@ -1879,7 +1879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983437881096, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: skillName
-      value: Bola de fuego
+      value: Espadazo
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983437881096, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: targeting
@@ -1899,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983437881098, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Name
-      value: Bola de fuego
+      value: Espadazo
       objectReference: {fileID: 0}
     - target: {fileID: 5656168737497771518, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_LocalPosition.x

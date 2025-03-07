@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Ultimo Suspiro
-  animationName: 
+  animationName: Attack
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 5414099164164723541}
   - component: {fileID: 3761933403146449889}
   m_Layer: 0
-  m_Name: Furia Dragon
+  m_Name: Ataque rapido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Churrasco
-  animationName: 
+  skillName: Ataque rapido
+  animationName: Attack
   animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3577838061029075964}
   - component: {fileID: 3067366305585805995}
   m_Layer: 0
-  m_Name: Rompe huesos
+  m_Name: Tajo certero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,14 +181,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
-  animationName: 
+  skillName: Tajo certero
+  animationName: Attack
   animationDuration: 2
   targeting: 2
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   skillType: 0
-  amount: -40
-  modType: 0
+  amount: -30
+  modType: 1
   critChance: 0.3
 --- !u!1 &8506440569128047920
 GameObject:
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8532911978701833774}
   - component: {fileID: 4038977643232905041}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Postura de ataque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,13 +386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidar
-  animationName: 
+  skillName: Postura de ataque
+  animationName: Attack
   animationDuration: 1
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
   skillType: 0
-  message: Bajo la defensa del rival en 10!
+  message: Bajo la defensa del rival en 8!
 --- !u!114 &4038977643232905041
 MonoBehaviour:
   m_ObjectHideFlags: 0

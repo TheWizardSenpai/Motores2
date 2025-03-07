@@ -230,7 +230,7 @@ MonoBehaviour:
   animationName: Attack
   animationDuration: 2
   targeting: 2
-  effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  effectPrfb: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   skillType: 0
   amount: -30
   modType: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   animationName: Attack
   animationDuration: 2
   targeting: 2
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   skillType: 0
   amount: -40
   modType: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   animationName: Attack
   animationDuration: 1
   targeting: 2
-  effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
+  effectPrfb: {fileID: 100008, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
   skillType: 0
   message: Bajaste la fuerza del rival en 15
 --- !u!114 &7093549484884788776
@@ -403,9 +403,9 @@ MonoBehaviour:
   animationName: Attack
   animationDuration: 1
   targeting: 0
-  effectPrfb: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
+  effectPrfb: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
   skillType: 0
-  message: Subio tu fuerza en 10
+  message: Subio tu defensa en 10
 --- !u!114 &8280196966388978861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,5 +418,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47ff11f69dff448b8bc3ad15aeb61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  amount: 10
+  type: 1
+  amount: 15

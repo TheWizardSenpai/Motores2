@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4717280559788404481}
   - component: {fileID: 4717280559788404494}
   m_Layer: 0
-  m_Name: Intimidacion
+  m_Name: Danza de la debilidad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1759cf0b44f5f34991483f888196507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Intimidar
+  skillName: Danza de la debilidad
   animationName: 
   animationDuration: 1
-  targeting: 3
-  effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
+  targeting: 2
+  effectPrfb: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   skillType: 0
   message: Bajo la defensa del rival en 10!
 --- !u!114 &4717280559788404494
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 4717280560116329053}
   - component: {fileID: 4717280560116329052}
   m_Layer: 0
-  m_Name: Curacion
+  m_Name: Vitalidad oscura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,14 +186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Curacion
+  skillName: Vitalidad oscura
   animationName: 
   animationDuration: 2
   targeting: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  effectPrfb: {fileID: 100006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
   skillType: 2
   amount: 20
-  modType: 0
+  modType: 1
   critChance: 0
 --- !u!1 &4717280560777874217
 GameObject:
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4717280560777874216}
   - component: {fileID: 4717280560777874219}
   m_Layer: 0
-  m_Name: Rompe huesos
+  m_Name: Llamarada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,12 +239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Rompe huesos
-  animationName: 
+  skillName: Llamarada
+  animationName: Attack
   animationDuration: 2
   targeting: 0
-  effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
-  skillType: 1
+  effectPrfb: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  skillType: 0
   amount: -40
   modType: 0
   critChance: 0.3
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 4717280561231854424}
   - component: {fileID: 4717280561231854427}
   m_Layer: 0
-  m_Name: Furia Dragon
+  m_Name: Maldicion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,15 +292,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Furia Dragon
-  animationName: 
-  animationDuration: 2
-  targeting: 4
-  effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  skillName: Maldicion
+  animationName: Attack
+  animationDuration: 1
+  targeting: 2
+  effectPrfb: {fileID: 100000, guid: 7b56cd9b663f23f429e131a54ec87db0, type: 3}
   skillType: 0
-  amount: -50
+  amount: -100
   modType: 0
-  critChance: 0
+  critChance: 0.5
 --- !u!1 &4717280561315673215
 GameObject:
   m_ObjectHideFlags: 0
