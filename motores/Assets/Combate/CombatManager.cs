@@ -213,6 +213,7 @@ public class CombatManager : MonoBehaviour
                     {
                         LogPanel.Write("Derrota!");
                         this.isCombatActive = false;
+                        SceneManager.LoadSceneAsync(5);
                     }
 
                     if (this.isCombatActive)

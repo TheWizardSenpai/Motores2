@@ -49,11 +49,10 @@ public class AudioManager : MonoBehaviour
         Buttons.Play(2);
     }
 
-    public void selectlevel()
+    public void ChangeScene(int sceneID)
     {
-        Level.Play(3);
+        SceneManager.LoadScene(sceneID);
     }
 
-    
 }
 

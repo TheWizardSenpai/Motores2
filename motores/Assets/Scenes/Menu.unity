@@ -777,7 +777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -760.45996, y: -93.284}
+  m_AnchoredPosition: {x: -760.4599, y: -93.284}
   m_SizeDelta: {x: -760.46, y: -265.544}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &59066922
@@ -3436,7 +3436,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 57.753887
+  orthographic size: 58.09859
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12337,12 +12337,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 663870336}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: selectlevel
-        m_Mode: 1
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

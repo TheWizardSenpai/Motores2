@@ -48,8 +48,9 @@ MonoBehaviour:
   skillName: Intimidar
   animationName: 
   animationDuration: 1
-  targeting: 0
+  targeting: 3
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
+  skillType: 0
   message: Bajo la defensa del rival en 10!
 --- !u!114 &4717280559788404494
 MonoBehaviour:
@@ -74,8 +75,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717280559950721383}
-  - component: {fileID: 4717280559950721381}
   - component: {fileID: 4717280559950721382}
+  - component: {fileID: 4717280559950721381}
   m_Layer: 0
   m_Name: EvilWitch
   m_TagString: Untagged
@@ -104,21 +105,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4717280559950721381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717280559950721378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a65e4a8968f178147a79ca82184379e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fighter: {fileID: 0}
-  actualDefense: {fileID: 0}
-  actualAttack: {fileID: 0}
 --- !u!114 &4717280559950721382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +127,21 @@ MonoBehaviour:
   DamagePivot: {fileID: 4717280561315673214}
   EnemyIndex: 0
   EnemyDateBase: {fileID: 11400000, guid: 664ed66c7d117d447b7a0bce3a493a87, type: 2}
+--- !u!114 &4717280559950721381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717280559950721378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65e4a8968f178147a79ca82184379e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighter: {fileID: 0}
+  actualDefense: {fileID: 0}
+  actualAttack: {fileID: 0}
 --- !u!1 &4717280560116329050
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  skillType: 2
   amount: 20
   modType: 0
   critChance: 0
@@ -242,6 +244,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
+  skillType: 1
   amount: -40
   modType: 0
   critChance: 0.3
@@ -292,8 +295,9 @@ MonoBehaviour:
   skillName: Furia Dragon
   animationName: 
   animationDuration: 2
-  targeting: 0
+  targeting: 4
   effectPrfb: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  skillType: 0
   amount: -50
   modType: 0
   critChance: 0
