@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4717280559788404495
 Transform:
   m_ObjectHideFlags: 0
@@ -102,6 +102,7 @@ Transform:
   - {fileID: 4717280560116329053}
   - {fileID: 4717280560777874216}
   - {fileID: 4717280561315673214}
+  - {fileID: 1755023678574801879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,9 +205,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717280560777874216}
-  - component: {fileID: 4717280560777874219}
+  - component: {fileID: 8387515836268688843}
   m_Layer: 0
-  m_Name: Llamarada
+  m_Name: Paralisis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,11 +224,12 @@ Transform:
   m_LocalPosition: {x: 427.31705, y: 432.69644, z: -0.09384908}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1535423781531067317}
   m_Father: {fileID: 4717280559950721383}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4717280560777874219
+--- !u!114 &8387515836268688843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,18 +238,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4717280560777874217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a1e45b40f968aa64bb2352c500b43b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Llamarada
+  skillName: Paralysis
   animationName: Attack
   animationDuration: 2
-  targeting: 0
-  effectPrfb: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  targeting: 2
+  effectPrfb: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
   skillType: 0
-  amount: -40
-  modType: 0
-  critChance: 0.3
 --- !u!1 &4717280561231854425
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717280561231854424}
-  - component: {fileID: 4717280561231854427}
+  - component: {fileID: 4513024277288554809}
   m_Layer: 0
   m_Name: Maldicion
   m_TagString: Untagged
@@ -280,7 +279,7 @@ Transform:
   m_Father: {fileID: 4717280559950721383}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4717280561231854427
+--- !u!114 &4513024277288554809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,18 +288,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4717280561231854425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Script: {fileID: 11500000, guid: ca02125b9f955734faf7a2c6a700593c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Maldicion
   animationName: Attack
-  animationDuration: 1
+  animationDuration: 2
   targeting: 2
   effectPrfb: {fileID: 100000, guid: 7b56cd9b663f23f429e131a54ec87db0, type: 3}
   skillType: 0
-  amount: -100
-  modType: 0
-  critChance: 0.5
+  damageAmount: 20
+  attackBuffAmount: 5
 --- !u!1 &4717280561315673215
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,3 +435,156 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6346739549687178087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755023678574801879}
+  - component: {fileID: 3111209278599246234}
+  m_Layer: 0
+  m_Name: Maldicion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755023678574801879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346739549687178087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6056655303518204281}
+  m_Father: {fileID: 4717280559950721383}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3111209278599246234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346739549687178087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e45b40f968aa64bb2352c500b43b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Void
+  animationName: Attack
+  animationDuration: 2
+  targeting: 2
+  effectPrfb: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
+  skillType: 0
+--- !u!1 &6616192972883557140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6056655303518204281}
+  - component: {fileID: 6439410309968713712}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6056655303518204281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616192972883557140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755023678574801879}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6439410309968713712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616192972883557140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8feb8406374c3140a0ca0011087322c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrfb: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
+  animationDuration: 2
+  receptionMessage: Cayo una maldicion sobre ti!
+  applyMessage: "La maldicion te hace da\xF1o"
+  expireMessage: La maldicion dejo de tener efecto
+  turnDuration: 3
+  percentage: -0.1
+--- !u!1 &8938501924823397997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535423781531067317}
+  - component: {fileID: 3458676623130538568}
+  m_Layer: 0
+  m_Name: Paralisis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535423781531067317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938501924823397997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4717280560777874216}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3458676623130538568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938501924823397997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f4b4ee1eb8f804fa78261f5b96620a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrfb: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
+  animationDuration: 2
+  receptionMessage: Estas paralizado
+  applyMessage: No puedes moverte
+  expireMessage: No estas mas paralizado
+  turnDuration: 1
+  blockChance: 1
