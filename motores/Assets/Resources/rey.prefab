@@ -201,9 +201,9 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   skillType: 0
-  amount: -40
+  amount: -25
   modType: 1
-  critChance: 0.3
+  critChance: 0
 --- !u!1 &2057316579319052312
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Rugido Real
   animationName: Attack2
-  animationDuration: 1
-  targeting: 2
+  animationDuration: 2
+  targeting: 0
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
   skillType: 0
   message: Bajo la defensa del rival en 10!
@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47ff11f69dff448b8bc3ad15aeb61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  amount: -10
+  type: 0
+  amount: 20
 --- !u!1 &2188682281110134230
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   skillType: 0
   amount: -50
   modType: 0
-  critChance: 1
+  critChance: 0.3
 --- !u!1 &3690386157912546632
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +404,6 @@ MonoBehaviour:
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   skillType: 2
-  amount: 35
-  modType: 0
-  critChance: 0.4
+  amount: 25
+  modType: 1
+  critChance: 0
