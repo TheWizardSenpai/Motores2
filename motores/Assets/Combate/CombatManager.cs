@@ -70,6 +70,14 @@ public class CombatManager : MonoBehaviour
         Animator characterAnimator = playerCharacterInstance.GetComponent<Animator>();
         PlayerFighter playerFighter = playerCharacterInstance.GetComponent<PlayerFighter>().GetSkillPanel(skillPanel, statusPanel, enemiesPanel);
 
+        PotionsInGame potionsScript = GameObject.FindObjectOfType<PotionsInGame>();
+        if (potionsScript != null)
+        {
+            potionsScript.SetPlayerFighter(playerFighter);
+        }
+
+
+
         this.fighters = GameObject.FindObjectsOfType<Fighter>();
         playerFighter.skillPanel = this.skillPanel;
         this.SortFightersBySpeed();

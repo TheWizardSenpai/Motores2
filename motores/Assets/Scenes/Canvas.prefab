@@ -128,7 +128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -770, y: -390}
+  m_AnchoredPosition: {x: -663, y: 465}
   m_SizeDelta: {x: 430, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7316199381672994233
@@ -173,7 +173,8 @@ MonoBehaviour:
   - {fileID: 6739415032344150729, guid: fde86ac5ce5e0f342bf65dbe3b4241a3, type: 3}
   - {fileID: 8060574365834224411, guid: 55b49bcbae120ef48ae385c1b5d68f91, type: 3}
   potionsParent: {fileID: 7316199381672994235}
-  playerFighter: {fileID: 0}
+  playerFighter: {fileID: 5889936391051471346, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
+  playerFighterPrefab: {fileID: 4993723378500727978, guid: 99d1d525c0f22b04aaa3d6423bb3dd7d, type: 3}
 --- !u!222 &7316199381672994215
 CanvasRenderer:
   m_ObjectHideFlags: 0

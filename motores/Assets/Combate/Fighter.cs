@@ -13,7 +13,10 @@ public abstract class Fighter : MonoBehaviour
     public List<StatusMod> statusMods;
 
     protected Stats stats;
-
+    public Stats GetStats()
+    {
+        return stats;
+    }
     protected Skill[] skills;
     public Animator animator;
     public StatusCondition statusCondition;

@@ -11,18 +11,20 @@ public class PotionsInGame : MonoBehaviour
     public GameObject[] potionPrefabs;
     public Transform potionsParent;
     public PlayerFighter playerFighter;
-
+   
     private void Start()
     {
         inventory.LoadInventory();
         InstantiatePotions();
+        playerFighter = FindObjectOfType<PlayerFighter>();
+        playerFighter = GameObject.Find("PlayerFighter(Clone)").GetComponent<PlayerFighter>();
     }
 
     private void InstantiatePotions()
     {
         foreach (Potion potion in inventory.GetPotions())
         {
-            if (potion.Quantity > 0)
+            if (potion != null && potion.Quantity > 0)
             {
                 int prefabIndex = (int)potion.potionType;
                 GameObject potionPrefab = potionPrefabs[prefabIndex];
@@ -34,7 +36,13 @@ public class PotionsInGame : MonoBehaviour
                 potionButton.onClick.AddListener(delegate { UsePotion(potion, quantityText, potionButton); });
             }
         }
+
     }
+    public void SetPlayerFighter(PlayerFighter fighter)
+    {
+        playerFighter = fighter;
+    }
+
 
 
     private void UsePotion(Potion potion, TextMeshProUGUI quantityText, Button potionButton)
@@ -45,7 +53,11 @@ public class PotionsInGame : MonoBehaviour
         int newQuantity = potion.Quantity;
         quantityText.text = newQuantity.ToString();
 
-        playerFighter.ExecuteSkill(2);
+        // Aquí curas al jugador
+        if (playerFighter != null)
+        {
+            playerFighter.ModifyHealth(20f);  // Suponiendo que la poción cura 20 puntos de salud
+        }
 
         if (newQuantity <= 0)
         {
@@ -55,3 +67,5 @@ public class PotionsInGame : MonoBehaviour
         inventory.SaveInventory();
     }
 }
+
+
