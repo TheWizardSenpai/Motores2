@@ -159,6 +159,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5160316685594440998, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
   m_PrefabInstance: {fileID: 5160316684837063762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &226406980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 752838099159471414, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+  m_PrefabInstance: {fileID: 5160316684837063762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &226406983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226406980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d47ff11f69dff448b8bc3ad15aeb61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  amount: 0
 --- !u!1 &259608464
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,12 +223,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Misil Magico
-  animationName: 
+  animationName: Attack
   animationDuration: 2
   targeting: 4
   effectPrfb: {fileID: 1545806602296978, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
+  skillType: 0
   amount: -50
-  modType: 1
+  modType: 0
   critChance: 0
 --- !u!114 &622452902 stripped
 MonoBehaviour:
@@ -524,7 +544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1464299886
 Transform:
   m_ObjectHideFlags: 0
@@ -553,12 +573,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Tortura
-  animationName: 
+  animationName: Attack
   animationDuration: 2
   targeting: 4
   effectPrfb: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  skillType: 0
   amount: -40
-  modType: 1
+  modType: 0
   critChance: 0.3
 --- !u!1 &1534443811
 GameObject:
@@ -576,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1534443812
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +630,7 @@ MonoBehaviour:
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
+  skillType: 2
   amount: 20
   modType: 0
   critChance: 0
@@ -828,7 +850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2030251922
 Transform:
   m_ObjectHideFlags: 0
@@ -871,10 +893,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Miedo
-  animationName: 
+  animationName: Attack
   animationDuration: 1
   targeting: 4
   effectPrfb: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
+  skillType: 0
   message: Bajo la defensa del rival en 10!
 --- !u!1 &2091148817
 GameObject:
@@ -1005,6 +1028,14 @@ PrefabInstance:
       propertyPath: combatManager
       value: 
       objectReference: {fileID: 1839064883}
+    - target: {fileID: 1128500207420274400, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: message
+      value: Bajaste la fuerza del rival en 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128500207420274400, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: targeting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1228525011635259842, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: skillPanel
       value: 
@@ -1232,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 6833358724909066085, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: actualDefense
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235392213150398353, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
+      propertyPath: amount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7392633035753640342, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
       propertyPath: targeting

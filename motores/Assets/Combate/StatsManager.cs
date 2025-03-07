@@ -16,7 +16,7 @@ public class StatsManager : MonoBehaviour
     }
     void Update()
     {
-        //UpdateUI();
+        UpdateUI();
         //Debug.Log("Figther" + fighter.stats.attack);
     }
 
@@ -39,7 +39,7 @@ public class StatsManager : MonoBehaviour
             actualDefense.color = Color.yellow;
         }
 
-        if (deffense <= 20)
+        if (deffense <= 0)
         {
             actualDefense.color = Color.red;
         }
@@ -56,7 +56,7 @@ public class StatsManager : MonoBehaviour
             actualAttack.color = Color.yellow;
 
         }
-        if (attack <= 20)
+        if (attack <= 0)
         {
 
             actualAttack.color = Color.red;
