@@ -1803,7 +1803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983204695822, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: animationDuration
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: m_Name
