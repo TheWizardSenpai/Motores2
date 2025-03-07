@@ -107,11 +107,15 @@ public abstract class Fighter : MonoBehaviour
         if (amount > 0f)
         {
             this.animator.Play("Heal");
+            Invoke("SetIdleAnimation", 2f);
         }
         else
         {
             this.animator.Play("Damages");
+            Invoke("SetIdleAnimation", 2f);
         }
+
+        Invoke("IDLE", 1f);
     }
 
     public Stats GetCurrentStats()
@@ -139,4 +143,9 @@ public abstract class Fighter : MonoBehaviour
 
 
     public abstract void InitTurn();
+
+    private void SetIdleAnimation()
+    {
+        animator.Play("IDLE");
+    }
 }

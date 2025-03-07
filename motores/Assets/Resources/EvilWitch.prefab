@@ -51,6 +51,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   skillType: 0
+  SkillDesc: 
   message: Bajo la defensa del rival en 10!
 --- !u!114 &4717280559788404494
 MonoBehaviour:
@@ -188,11 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Vitalidad oscura
-  animationName: 
+  animationName: Attack
   animationDuration: 2
   targeting: 0
   effectPrfb: {fileID: 100006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
   skillType: 2
+  SkillDesc: 
   amount: 20
   modType: 1
   critChance: 0
@@ -247,6 +249,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
   skillType: 0
+  SkillDesc: 
 --- !u!1 &4717280561231854425
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +300,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: 7b56cd9b663f23f429e131a54ec87db0, type: 3}
   skillType: 0
+  SkillDesc: 
   damageAmount: 20
   attackBuffAmount: 5
 --- !u!1 &4717280561315673215
@@ -486,6 +490,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   skillType: 0
+  SkillDesc: 
 --- !u!1 &6616192972883557140
 GameObject:
   m_ObjectHideFlags: 0

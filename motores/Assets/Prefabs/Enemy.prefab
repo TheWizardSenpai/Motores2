@@ -197,11 +197,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Curacion
-  animationName: 
+  animationName: Attack
   animationDuration: 2
-  targeting: 0
+  targeting: 2
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   skillType: 0
+  SkillDesc: 
   amount: 20
   modType: 0
   critChance: 0
@@ -214,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4099514982764048884}
-  - component: {fileID: 4099514982764048885}
+  - component: {fileID: 2062595087684153495}
   m_Layer: 0
   m_Name: Rompe huesos
   m_TagString: Untagged
@@ -237,7 +238,7 @@ Transform:
   m_Father: {fileID: 4099514983333418150}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4099514982764048885
+--- !u!114 &2062595087684153495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,18 +247,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4099514982764048887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Script: {fileID: 11500000, guid: ae0edb394db430f42a89f7dd1d197742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Desmembramiento
+  skillName: Robo de vida
   animationName: Attack
   animationDuration: 2
-  targeting: 0
+  targeting: 2
   effectPrfb: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
   skillType: 0
-  amount: -2
-  modType: 2
-  critChance: 0.3
+  SkillDesc: 
+  lifeStealPercentage: 0.3
+  amount: 100
 --- !u!1 &4099514983204695819
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,8 @@ MonoBehaviour:
   targeting: 0
   effectPrfb: {fileID: 1628744458893394, guid: e243632bb3aff9549abdcfcc2ef0c4f0, type: 3}
   skillType: 0
-  message: Aumento su defensa
+  SkillDesc: Attack
+  message: Aumento su fuerza en 10
 --- !u!114 &4099514983204695817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47ff11f69dff448b8bc3ad15aeb61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  amount: 20
+  type: 0
+  amount: 10
 --- !u!1 &4099514983333418145
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,9 +433,10 @@ MonoBehaviour:
   skillName: Espadazo
   animationName: Attack
   animationDuration: 2
-  targeting: 0
+  targeting: 2
   effectPrfb: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
   skillType: 0
+  SkillDesc: 
   amount: -40
   modType: 0
   critChance: 0

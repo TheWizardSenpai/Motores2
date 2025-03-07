@@ -50,6 +50,7 @@ MonoBehaviour:
   targeting: 0
   effectPrfb: {fileID: 158530, guid: eff797b50bb18e64c8057ef583cec496, type: 3}
   skillType: 2
+  SkillDesc: 
   amount: 100
   modType: 0
   critChance: 0
@@ -62,7 +63,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5414099164164723541}
-  - component: {fileID: 3761933403146449889}
+  - component: {fileID: 487096203465321958}
   m_Layer: 0
   m_Name: Ataque rapido
   m_TagString: Untagged
@@ -85,7 +86,7 @@ Transform:
   m_Father: {fileID: 8506440569128047923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3761933403146449889
+--- !u!114 &487096203465321958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4695279143962924517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f2f8bf727d2747a53b775d763b9dc, type: 3}
+  m_Script: {fileID: 11500000, guid: ca02125b9f955734faf7a2c6a700593c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Ataque rapido
@@ -103,9 +104,9 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   skillType: 0
-  amount: -50
-  modType: 0
-  critChance: 1
+  SkillDesc: 
+  damageAmount: 30
+  attackBuffAmount: 10
 --- !u!1 &5267324250157663467
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +188,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   skillType: 0
+  SkillDesc: 
   amount: -30
   modType: 1
   critChance: 0.3
@@ -392,6 +394,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 107166, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
   skillType: 0
+  SkillDesc: 
   message: Bajo la defensa del rival en 8!
 --- !u!114 &4038977643232905041
 MonoBehaviour:

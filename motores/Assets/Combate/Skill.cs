@@ -24,7 +24,7 @@ public abstract class Skill : MonoBehaviour
     protected List<Fighter> receivers;
     public SkillType skillType;
     protected Queue<string> messages;
-
+    public string SkillDesc;
     public bool needsManualTargeting
     {
         get

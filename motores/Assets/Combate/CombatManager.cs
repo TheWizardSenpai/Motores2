@@ -17,8 +17,8 @@ public class CombatManager : MonoBehaviour
     private Fighter[] playerTeam;
     private Fighter[] enemyTeam;
 
-    private Fighter[] fighters;
-    private int fighterIndex;
+    public Fighter[] fighters;
+    public int fighterIndex;
 
     private bool isCombatActive;
 

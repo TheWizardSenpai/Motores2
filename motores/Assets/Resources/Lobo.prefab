@@ -232,6 +232,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   skillType: 0
+  SkillDesc: Hace -30 STAT_BASED
   amount: -30
   modType: 0
   critChance: 1
@@ -285,8 +286,9 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   skillType: 0
-  amount: -40
-  modType: 0
+  SkillDesc: "Hace 25 de da\xF1o verdadero y tiene 30% de ser un golpe critico"
+  amount: -35
+  modType: 1
   critChance: 0.3
 --- !u!1 &8126274707292158524
 GameObject:
@@ -339,6 +341,7 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100008, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
   skillType: 0
+  SkillDesc: Bajas la fuerza del rival en 15
   message: Bajaste la fuerza del rival en 15
 --- !u!114 &7093549484884788776
 MonoBehaviour:
@@ -405,6 +408,7 @@ MonoBehaviour:
   targeting: 0
   effectPrfb: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
   skillType: 0
+  SkillDesc: La luna te sonrie aumenta en 10 tu defensa
   message: Subio tu defensa en 10
 --- !u!114 &8280196966388978861
 MonoBehaviour:

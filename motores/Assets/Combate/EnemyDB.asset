@@ -19,7 +19,7 @@ MonoBehaviour:
     prefabIndex: 0
     maxHealth: 70
     level: 20
-    attack: 35
+    attack: 20
     deffense: 35
     spirit: 20
     speed: 15
@@ -32,11 +32,11 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
     prefabIndex: 1
     maxHealth: 90
-    level: 24
+    level: 25
     attack: 35
     deffense: 40
     spirit: 10
-    speed: 10
+    speed: 15
     Description: Mago
     LargeDescription: Mago del segundo nivel
     Name: Wizard
@@ -74,7 +74,7 @@ MonoBehaviour:
     enemyPrefab: {fileID: 8506440569128047920, guid: c7e169d2b6f7e5542a3b9be852c85cdc, type: 3}
     prefabIndex: 4
     maxHealth: 80
-    level: 25
+    level: 27
     attack: 35
     deffense: 35
     spirit: 10
@@ -88,11 +88,11 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4717280559950721378, guid: c0ae34b4f1afc4b43ad8e9d89bf71ff7, type: 3}
     prefabIndex: 5
     maxHealth: 200
-    level: 25
+    level: 26
     attack: 35
     deffense: 35
     spirit: 10
-    speed: 2
+    speed: 20
     Description: Mago
     LargeDescription: Mago del segundo nivel
     Name: Lobo

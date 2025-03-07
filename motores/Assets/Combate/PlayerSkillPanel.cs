@@ -45,6 +45,14 @@ public class PlayerSkillPanel : MonoBehaviour
             btn.SetActive(false);
         }
     }
+    public void Show()
+    {
+        this.gameObject.SetActive(true);
 
+        foreach (var btn in this.skillButtons)
+        {
+            btn.SetActive(true);
+        }
+    }
 
 }

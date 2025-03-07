@@ -16,8 +16,7 @@ public class PotionsInGame : MonoBehaviour
     {
         inventory.LoadInventory();
         InstantiatePotions();
-        playerFighter = FindObjectOfType<PlayerFighter>();
-        playerFighter = GameObject.Find("PlayerFighter(Clone)").GetComponent<PlayerFighter>();
+        
     }
 
     private void InstantiatePotions()
