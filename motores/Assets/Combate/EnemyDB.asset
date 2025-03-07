@@ -31,7 +31,7 @@ MonoBehaviour:
     isSecondaryCharacter: 0
     enemyPrefab: {fileID: 4099514983333418145, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
     prefabIndex: 1
-    maxHealth: 80
+    maxHealth: 90
     level: 24
     attack: 35
     deffense: 40

@@ -1854,6 +1854,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4099514983333418151, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
+      propertyPath: idName
+      value: Caballero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099514983333418151, guid: cded785cc0a8c6d41ba31a951a77f479, type: 3}
       propertyPath: EnemyIndex
       value: 1
       objectReference: {fileID: 0}

@@ -232,8 +232,8 @@ MonoBehaviour:
   targeting: 2
   effectPrfb: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   skillType: 0
-  amount: -50
-  modType: 0
+  amount: -100
+  modType: 1
   critChance: 1
 --- !u!1 &5788562522235234531
 GameObject:
