@@ -750,6 +750,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4587044474932683396, guid: 05bfb26278882944897714672e86578a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1517
+      objectReference: {fileID: 0}
     - target: {fileID: 6383627631598149683, guid: 05bfb26278882944897714672e86578a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1408,7 +1412,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.1830983
+  orthographic size: 6.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1753,6 +1757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65712a1b448f084d9d2b2048d2ab65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fighters: []
+  fighterIndex: 0
   enemiesPanel: {fileID: 1056608969}
   skillPanel: {fileID: 619620274}
   statusPanel: {fileID: 1056608970}
