@@ -2,11 +2,11 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
 
-public class tooltip : MonoBehaviour
+public class Tooltip : MonoBehaviour
 
 {
     public SkillManager skillManager;
-    private static tooltip instance;
+    private static Tooltip instance;
     public Image tool;
     public Text skillNameTxT;
     public GameObject ActionsButtonsPanel;

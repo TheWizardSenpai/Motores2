@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &54173367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7673209066741996173, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &66115322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5160316685594440998, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
@@ -158,11 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   amount: 0
---- !u!1 &471285667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7316199381681285688, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &622452902 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4901151875190306429, guid: 05bfb26278882944897714672e86578a, type: 3}
@@ -349,7 +333,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7316199381681285670, guid: 05bfb26278882944897714672e86578a, type: 3}
   m_PrefabInstance: {fileID: 7316199382285717367}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471285667}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab625d6918b7b96409e9ea8b5cc34427, type: 3}
@@ -529,27 +513,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2131792846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6909725720893485119, guid: 05bfb26278882944897714672e86578a, type: 3}
-  m_PrefabInstance: {fileID: 7316199382285717367}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2131792850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131792846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219f963426ca6474f9fef3eae821557b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillManager: {fileID: 0}
-  tool: {fileID: 54173367}
-  skillNameTxT: {fileID: 0}
-  ActionsButtonsPanel: {fileID: 471285667}
 --- !u!114 &2139983624 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3017312246037799241, guid: a7caea3b31ffd9f4cbe1d26826267af1, type: 3}
@@ -1348,11 +1311,11 @@ PrefabInstance:
     - target: {fileID: 7316199382402891997, guid: 05bfb26278882944897714672e86578a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2131792850}
+      objectReference: {fileID: 0}
     - target: {fileID: 7316199382402891997, guid: 05bfb26278882944897714672e86578a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2131792850}
+      objectReference: {fileID: 0}
     - target: {fileID: 7316199382402891997, guid: 05bfb26278882944897714672e86578a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
